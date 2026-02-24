@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReliefNote｜遺族のための手続き支援サービス</title>
+  <meta name="description" content="手続きとこころを、ひとつに。故人情報を入力するだけで必要な手続きを自動整理。専任コンシェルジュが伴走します。">
+  <meta property="og:title" content="ReliefNote｜遺族のための手続き支援サービス">
+  <meta property="og:description" content="手続きとこころを、ひとつに。故人情報を入力するだけで必要な手続きを自動整理。専任コンシェルジュが伴走します。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="./images/logo-icon.png">
+  <style>
+    /* ============================================
+       CSS Variables
+       ============================================ */
+    :root {
+      --bg-primary: #ffffff;
+      --bg-warm: #f8f7f4;
+      --bg-dark: #2c2f2c;
+      --text-primary: #1a1a1a;
+      --text-secondary: #6b6b6b;
+      --text-tertiary: #999999;
+      --text-on-dark: #f0efe9;
+      --text-on-dark-sub: #b0b0a8;
+      --accent: #3F453F;
+      --accent-light: #ededed;
+      --border: #e8e8e8;
+      --border-light: #f0f0f0;
+    }
+
+    /* ============================================
+       Reset & Base
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      color: var(--text-primary);
+      background-color: var(--bg-warm);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ============================================
+       Layout
+       ============================================ */
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .container--narrow {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    /* ============================================
+       Shared
+       ============================================ */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .section-label--light {
+      color: var(--text-on-dark-sub);
+    }
+
+    .card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: 48px;
+      padding: 16px 44px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 1;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--text-on-dark);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn--outline:hover {
+      border-color: rgba(255,255,255,0.6);
+      opacity: 1;
+    }
+
+    /* ============================================
+       Header (sticky nav)
+       ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(248, 247, 244, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .header-inner {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 80px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .header-cta {
+      font-size: 14px;
+      padding: 10px 24px;
+      border-radius: 48px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .header-cta:hover {
+      opacity: 0.85;
+    }
+
+    /* ============================================
+       Section 1 : Hero
+       ============================================ */
+    .hero {
+      padding-top: 180px;
+      padding-bottom: 120px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-heading {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.3px;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 48px;
+    }
+
+    .hero-mockup-wrap {
+      margin-top: 56px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-mockup {
+      max-width: 360px;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+    }
+
+    /* ============================================
+       Section 2 : Stats band
+       ============================================ */
+    .stats {
+      background: var(--bg-dark);
+      padding: 72px 0;
+    }
+
+    .stats-inner {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--text-on-dark);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 15px;
+      color: var(--text-on-dark-sub);
+      line-height: 1.5;
+    }
+
+    /* ============================================
+       Section 3 : Reality (課題提起)
+       ============================================ */
+    .reality {
+      padding: 100px 0;
+    }
+
+    .reality-body {
+      text-align: center;
+    }
+
+    .reality-text {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-primary);
+      line-height: 2.0;
+      margin-bottom: 8px;
+    }
+
+    .reality-text:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================
+       Section 4 : What we do
+       ============================================ */
+    .whatwedo {
+      padding: 100px 0;
+      background: var(--bg-primary);
+    }
+
+    .whatwedo-body {
+      text-align: center;
+    }
+
+    .whatwedo-heading {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .whatwedo-desc {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       Section 5 : Features
+       ============================================ */
+    .features {
+      padding: 100px 0;
+    }
+
+    .features-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      border-top: 3px solid var(--accent);
+      padding: 32px;
+    }
+
+    .feature-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .feature-title {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       Section 6 : Testimonial
+       ============================================ */
+    .testimonial {
+      background: var(--bg-primary);
+      padding: 120px 0;
+    }
+
+    .testimonial-body {
+      text-align: center;
+    }
+
+    .testimonial-quote {
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.9;
+      margin-bottom: 28px;
+      font-style: normal;
+    }
+
+    .testimonial-quote::before {
+      content: "\201C";
+      display: block;
+      font-size: 60px;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .testimonial-attr {
+      font-size: 14px;
+      color: var(--text-tertiary);
+    }
+
+    /* ============================================
+       Section 7 : Field
+       ============================================ */
+    .field {
+      padding: 100px 0;
+    }
+
+    .field-body {
+      text-align: center;
+    }
+
+    .field-text {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       Section 8 : Founder
+       ============================================ */
+    .founder {
+      background: var(--bg-primary);
+      padding: 100px 0;
+    }
+
+    .founder-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .founder-avatar {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .founder-avatar-initial {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .founder-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .founder-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .founder-name-en {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .founder-bio p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 6px;
+    }
+
+    .founder-bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================
+       Section 9 : CTA band
+       ============================================ */
+    .cta-band {
+      background: var(--bg-dark);
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .cta-heading {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      color: var(--text-on-dark);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .cta-sub {
+      font-size: 17px;
+      color: var(--text-on-dark-sub);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================
+       Footer
+       ============================================ */
+    .footer {
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* ============================================
+       PC (1024px+) : font-size boost
+       ============================================ */
+    @media (min-width: 1024px) {
+      body {
+        font-size: 18px;
+      }
+
+      .hero-sub {
+        font-size: 22px;
+      }
+
+      .stat-label {
+        font-size: 17px;
+      }
+
+      .reality-text {
+        font-size: 21px;
+        line-height: 2.1;
+      }
+
+      .whatwedo-heading {
+        font-size: 40px;
+      }
+
+      .whatwedo-desc {
+        font-size: 21px;
+      }
+
+      .section-label {
+        font-size: 13px;
+      }
+
+      .feature-title {
+        font-size: 22px;
+      }
+
+      .feature-desc {
+        font-size: 17px;
+      }
+
+      .testimonial-quote {
+        font-size: 28px;
+      }
+
+      .testimonial-attr {
+        font-size: 16px;
+      }
+
+      .field-text {
+        font-size: 19px;
+      }
+
+      .founder-name {
+        font-size: 22px;
+      }
+
+      .founder-name-en {
+        font-size: 15px;
+      }
+
+      .founder-bio p {
+        font-size: 18px;
+      }
+
+      .cta-heading {
+        font-size: 40px;
+      }
+
+      .cta-sub {
+        font-size: 19px;
+      }
+
+      .btn {
+        font-size: 17px;
+        padding: 18px 48px;
+      }
+
+      .header-cta {
+        font-size: 15px;
+        padding: 12px 28px;
+      }
+    }
+
+    /* ============================================
+       Responsive
+       ============================================ */
+    @media (max-width: 768px) {
+      .features-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .feature-card {
+        padding: 16px 20px;
+      }
+
+      .container,
+      .container--narrow {
+        padding: 0 20px;
+      }
+
+      .header-inner,
+      .stats-inner {
+        padding: 0 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 96px;
+        padding-bottom: 48px;
+      }
+
+      .stats-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .stats {
+        padding: 32px 0;
+      }
+
+      .reality,
+      .features,
+      .field {
+        padding: 40px 0;
+      }
+
+      .whatwedo,
+      .testimonial,
+      .founder {
+        padding: 40px 0;
+      }
+
+      .cta-band {
+        padding: 40px 0;
+      }
+
+      .founder-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <img src="./images/logo-header-v2.png" alt="ReliefNote" class="header-logo">
+      <a href="mailto:reliefnote@gmail.com" class="header-cta">お問い合わせ</a>
+    </div>
+  </header>
+
+  <!-- Section 1 : Hero -->
+  <section class="hero">
+    <div class="container--narrow">
+      <img src="./images/logo-icon.png" alt="" class="hero-logo">
+      <h1 class="hero-heading">何から始めるか、もう迷わない。</h1>
+      <p class="hero-sub">大切な方を亡くしたあとの届出・相続・解約。<br>必要な手続きを自動で整理し、専任の担当者が最後まで伴走します。</p>
+      <a href="mailto:reliefnote@gmail.com" class="btn">お問い合わせ</a>
+      <div class="hero-mockup-wrap">
+        <img src="./images/hero.png" alt="" class="hero-mockup" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 : Stats -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div>
+        <p class="stat-number">162万人</p>
+        <p class="stat-label">年間死亡者数</p>
+      </div>
+      <div>
+        <p class="stat-number">400万人</p>
+        <p class="stat-label">手続きに直面する遺族</p>
+      </div>
+      <div>
+        <p class="stat-number">40〜100件</p>
+        <p class="stat-label">必要な届出・手続きの数</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 : Reality -->
+  <section class="reality">
+    <div class="container--narrow">
+      <p class="section-label" style="text-align:center;">Reality</p>
+      <div class="reality-body">
+        <p class="reality-text">大切な方を亡くしたあと、届出や手続きは40〜100種類以上。</p>
+        <p class="reality-text">期限も届け先もバラバラで、何から始めればいいか分からない。</p>
+        <p class="reality-text">平均15ヶ月を手続きに費やし、90%以上の遺族が心身の不調を経験しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 : What we do -->
+  <section class="whatwedo">
+    <div class="container--narrow">
+      <p class="section-label" style="text-align:center;">What we do</p>
+      <div class="whatwedo-body">
+        <h2 class="whatwedo-heading">遺族のためのGPS</h2>
+        <p class="whatwedo-desc">ReliefNoteは、故人の情報を入力するだけで<br>必要な手続き・届け先・期限を自動で整理する<br>遺族のための手続き支援サービスです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 : Features -->
+  <section class="features">
+    <div class="container">
+      <p class="section-label">Service</p>
+      <ul class="features-list">
+        <li class="card feature-card">
+          <p class="feature-num">01</p>
+          <h3 class="feature-title">手続きを自動でリスト化</h3>
+          <p class="feature-desc">故人との続柄や状況を入力するだけで、行政届出・銀行口座・保険・年金・税金など、必要な手続きを自動でリスト化。届け先と期限もまとめて表示します。</p>
+        </li>
+        <li class="card feature-card">
+          <p class="feature-num">02</p>
+          <h3 class="feature-title">期限順に優先度を整理</h3>
+          <p class="feature-desc">死亡届は7日以内、世帯主変更届は14日以内、相続放棄は3か月以内。期限が近いものから順に並べるので、何から始めるか迷いません。</p>
+        </li>
+        <li class="card feature-card">
+          <p class="feature-num">03</p>
+          <h3 class="feature-title">専任コンシェルジュが伴走</h3>
+          <p class="feature-desc">手続きの進め方が分からない時、書類の意味が分からない時、気持ちがついていかない時。チャットや電話で、専任の担当者がいつでもそばにいます。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 6 : Testimonial -->
+  <section class="testimonial">
+    <div class="container--narrow">
+      <div class="testimonial-body">
+        <blockquote class="testimonial-quote">
+          何から手をつけていいか分からなかった。<br>全体が見えるだけで、こんなに気持ちが楽になるとは思わなかった。
+        </blockquote>
+        <p class="testimonial-attr">— ユーザーインタビューより</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7 : Field -->
+  <section class="field">
+    <div class="container--narrow">
+      <p class="section-label" style="text-align:center;">Field</p>
+      <div class="field-body">
+        <p class="field-text">北海道北竜町にて、自治体と連携した実証運用を行っています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8 : Founder -->
+  <section class="founder">
+    <div class="container">
+      <p class="section-label">Founder</p>
+      <div class="founder-content">
+        <div class="founder-avatar">
+          <span class="founder-avatar-initial">AK</span>
+        </div>
+        <div class="founder-text">
+          <p class="founder-name">北林 歩</p>
+          <p class="founder-name-en">Ayumu Kitabayashi</p>
+          <div class="founder-bio">
+            <p>明治大学農学部卒。在学中に1年間休学し世界一周。</p>
+            <p>22歳の時、友人の突然の死をきっかけに、遺族が直面する現実を知る。</p>
+            <p>年間400万人の遺族が同じ状況にあると知り、ReliefNoteを立ち上げる。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9 : CTA band -->
+  <section class="cta-band">
+    <div class="container--narrow">
+      <h2 class="cta-heading">すべての遺族が、迷わず前を向けるように。</h2>
+      <p class="cta-sub">ReliefNoteに関するご相談・導入のご検討はお気軽にご連絡ください。</p>
+      <div class="cta-buttons">
+        <a href="mailto:reliefnote@gmail.com" class="btn btn--outline">reliefnote@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-copy">© 2025 ReliefNote</p>
+  </footer>
+
+</body>
+</html>
