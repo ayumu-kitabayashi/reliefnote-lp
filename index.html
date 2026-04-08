@@ -124,6 +124,30 @@
       opacity: 1;
     }
 
+    /* light outline (used on warm bg) */
+    .btn--ghost {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn--ghost:hover {
+      background: var(--bg-primary);
+      opacity: 1;
+    }
+
+    /* button group (hero / cta band) */
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-group .btn {
+      padding: 16px 36px;
+    }
+
     /* ============================================
        Header (sticky nav)
        ============================================ */
@@ -147,11 +171,32 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
 
     .header-logo {
       height: 36px;
       width: auto;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .header-nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .header-nav a:hover {
+      color: var(--text-primary);
     }
 
     .header-cta {
@@ -163,10 +208,15 @@
       font-weight: 600;
       text-decoration: none;
       transition: opacity 0.2s ease;
+      white-space: nowrap;
     }
 
     .header-cta:hover {
       opacity: 0.85;
+    }
+
+    @media (max-width: 900px) {
+      .header-nav { display: none; }
     }
 
     /* ============================================
@@ -332,6 +382,111 @@
       font-size: 15px;
       color: var(--text-secondary);
       line-height: 1.8;
+    }
+
+    /* ============================================
+       Section : For whom (3-column audience split)
+       ============================================ */
+    .forwhom {
+      padding: 100px 0;
+      background: var(--bg-primary);
+    }
+
+    .forwhom-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .forwhom-heading {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.45;
+    }
+
+    .forwhom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .forwhom-card {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 36px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .forwhom-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+
+    .forwhom-card-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .forwhom-card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .forwhom-card-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .forwhom-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 14px 24px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 48px;
+      text-decoration: none;
+      align-self: flex-start;
+      transition: all 0.2s ease;
+    }
+
+    .forwhom-card-cta:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .forwhom-card-cta svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .forwhom-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .forwhom-card {
+        padding: 28px 24px;
+      }
     }
 
     /* ============================================
@@ -656,6 +811,11 @@
   <header class="header">
     <div class="header-inner">
       <img src="logo-header-v2.png" alt="ReliefNote" class="header-logo">
+      <nav class="header-nav">
+        <a href="#for-bereaved">遺族の方へ</a>
+        <a href="#for-government">自治体の方へ</a>
+        <a href="#for-funeral">葬儀社の方へ</a>
+      </nav>
       <a href="mailto:reliefnote@gmail.com" class="header-cta">お問い合わせ</a>
     </div>
   </header>
@@ -666,7 +826,11 @@
       <img src="logo-icon.png" alt="" class="hero-logo">
       <h1 class="hero-heading">何から始めるか、もう迷わない。</h1>
       <p class="hero-sub">大切な方を亡くしたあとの届出・相続・解約。<br>必要な手続きを自動で整理し、専任の担当者が最後まで伴走します。</p>
-      <a href="mailto:reliefnote@gmail.com" class="btn">お問い合わせ</a>
+      <div class="btn-group">
+        <a href="https://reliefnote.github.io/app/" class="btn">アプリを使う</a>
+        <a href="mailto:reliefnote@gmail.com?subject=%E8%B3%87%E6%96%99%E8%AB%8B%E6%B1%82" class="btn btn--ghost">資料請求</a>
+        <a href="mailto:reliefnote@gmail.com?subject=%E5%B0%8E%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="btn btn--ghost">導入相談</a>
+      </div>
       <div class="hero-mockup-wrap">
         <img src="./images/hero.png" alt="" class="hero-mockup" onerror="this.parentElement.style.display='none'">
       </div>
@@ -760,6 +924,45 @@
     </div>
   </section>
 
+  <!-- Section : For whom -->
+  <section class="forwhom" id="for-whom">
+    <div class="container">
+      <div class="forwhom-head">
+        <p class="section-label" style="text-align:center;">For whom</p>
+        <h2 class="forwhom-heading">それぞれの立場に、それぞれの入口を。</h2>
+      </div>
+      <div class="forwhom-grid">
+        <div class="forwhom-card" id="for-bereaved">
+          <span class="forwhom-card-tag">For Bereaved</span>
+          <h3 class="forwhom-card-title">遺族の方へ</h3>
+          <p class="forwhom-card-desc">大切な方を亡くされた直後から、必要な手続きを自動で整理。期限の近いものから順にご案内し、専任の担当者が伴走します。</p>
+          <a href="https://reliefnote.github.io/app/" class="forwhom-card-cta">
+            アプリを使ってみる
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="forwhom-card" id="for-government">
+          <span class="forwhom-card-tag">For Local Government</span>
+          <h3 class="forwhom-card-title">自治体の方へ</h3>
+          <p class="forwhom-card-desc">住民への手続き案内・遺族支援を、職員の負担を増やさずに実現。北海道北竜町での実証運用をベースに、共同導入をご相談いただけます。</p>
+          <a href="mailto:reliefnote@gmail.com?subject=%E8%87%AA%E6%B2%BB%E4%BD%93%E5%B0%8E%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="forwhom-card-cta">
+            導入相談・資料請求
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="forwhom-card" id="for-funeral">
+          <span class="forwhom-card-tag">For Funeral Service</span>
+          <h3 class="forwhom-card-title">葬儀社の方へ</h3>
+          <p class="forwhom-card-desc">ご遺族へのアフターサポートとして、ReliefNoteをご案内いただけます。提携・パンフレット設置など、柔軟に対応いたします。</p>
+          <a href="mailto:reliefnote@gmail.com?subject=%E8%91%AC%E5%84%80%E7%A4%BE%E6%8F%90%E6%90%BA%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="forwhom-card-cta">
+            提携・資料請求
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section 8 : Founder -->
   <section class="founder">
     <div class="container">
@@ -785,9 +988,11 @@
   <section class="cta-band">
     <div class="container--narrow">
       <h2 class="cta-heading">すべての遺族が、迷わず前を向けるように。</h2>
-      <p class="cta-sub">ReliefNoteに関するご相談・導入のご検討はお気軽にご連絡ください。</p>
+      <p class="cta-sub">ReliefNoteに関するご相談・導入のご検討は、お気軽にご連絡ください。</p>
       <div class="cta-buttons">
-        <a href="mailto:reliefnote@gmail.com" class="btn btn--outline">reliefnote@gmail.com</a>
+        <a href="https://reliefnote.github.io/app/" class="btn">アプリを使う</a>
+        <a href="mailto:reliefnote@gmail.com?subject=%E8%B3%87%E6%96%99%E8%AB%8B%E6%B1%82" class="btn btn--outline">資料請求</a>
+        <a href="mailto:reliefnote@gmail.com?subject=%E5%B0%8E%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="btn btn--outline">導入相談</a>
       </div>
     </div>
   </section>
