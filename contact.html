@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜ReliefNote</title>
+  <meta name="description" content="ReliefNote への資料請求・商談予約・取材依頼などのお問い合わせフォーム。2 営業日以内にご返信いたします。">
+  <meta name="theme-color" content="#3F453F">
+
+  <meta property="og:title" content="お問い合わせ｜ReliefNote">
+  <meta property="og:description" content="資料請求・商談予約・取材依頼など、お気軽にご連絡ください。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://reliefnote.jp/contact.html">
+  <meta property="og:image" content="https://reliefnote.jp/og-image.png">
+
+  <link rel="icon" href="logo-icon.png">
+  <link rel="apple-touch-icon" href="logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html"><img src="logo-header-v2.png" alt="ReliefNote" class="header-logo"></a>
+      <nav class="header-nav">
+        <div class="header-nav-item">
+          <a href="index.html#solutions">ソリューション <span class="chevron"></span></a>
+          <div class="header-dropdown" role="menu">
+            <a href="for-funeral.html"><span class="header-dropdown-tag">For Funeral</span><span class="header-dropdown-title">葬儀社さま向け</span></a>
+            <a href="for-insurance.html"><span class="header-dropdown-tag">For Life Insurance</span><span class="header-dropdown-title">生命保険会社さま向け</span></a>
+            <a href="for-benefits.html"><span class="header-dropdown-tag">For Employers</span><span class="header-dropdown-title">福利厚生（雇用主）さま向け</span></a>
+            <a href="for-financial.html"><span class="header-dropdown-tag">For Financial</span><span class="header-dropdown-title">金融機関さま向け</span></a>
+          </div>
+        </div>
+        <div class="header-nav-item"><a href="company.html">About</a></div>
+        <div class="header-nav-item"><a href="contact.html">お問い合わせ</a></div>
+      </nav>
+      <a href="contact.html" class="header-cta">資料請求 / 商談予約</a>
+    </div>
+  </header>
+
+  <section class="ihero">
+    <div class="ihero-inner">
+      <nav class="ihero-breadcrumb"><a href="index.html">トップ</a><span class="sep">›</span><span>お問い合わせ</span></nav>
+      <span class="ihero-eyebrow">Contact</span>
+      <h1 class="ihero-heading">お問い合わせ</h1>
+      <p class="ihero-sub">資料請求・商談予約・取材依頼などのお問い合わせは、以下のフォームよりお送りください。<br>2 営業日以内にご返信いたします。</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" style="padding-top: 60px;">
+    <div class="container--narrow">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="contact-field">
+          <label>ご希望 <span class="req">*</span></label>
+          <div class="contact-role-grid">
+            <label><input type="radio" name="role" value="document" required> 資料請求（PDF）</label>
+            <label><input type="radio" name="role" value="meeting"> 30 分の商談予約</label>
+            <label><input type="radio" name="role" value="both"> 資料 + 商談 の両方</label>
+            <label><input type="radio" name="role" value="press"> 取材・メディア</label>
+            <label><input type="radio" name="role" value="other"> その他のご相談</label>
+          </div>
+        </div>
+
+        <div class="contact-field">
+          <label for="cf-industry">貴社の業種 <span class="req">*</span></label>
+          <select id="cf-industry" name="industry" class="contact-select" required>
+            <option value="">— 選択してください —</option>
+            <option value="funeral">葬儀社</option>
+            <option value="insurance">生命保険</option>
+            <option value="benefits">福利厚生（雇用主・人事）</option>
+            <option value="financial">金融機関（銀行・証券・信託）</option>
+            <option value="government">自治体・公的機関</option>
+            <option value="press">報道・メディア</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+
+        <div class="contact-field">
+          <label for="cf-org">貴社名 <span class="req">*</span></label>
+          <input id="cf-org" name="organization" type="text" class="contact-input" maxlength="120" required autocomplete="organization" placeholder="例: 株式会社○○">
+        </div>
+
+        <div class="contact-field">
+          <label for="cf-name">ご担当者名 <span class="req">*</span></label>
+          <input id="cf-name" name="name" type="text" class="contact-input" maxlength="60" required autocomplete="name">
+        </div>
+
+        <div class="contact-field">
+          <label for="cf-email">メールアドレス <span class="req">*</span></label>
+          <input id="cf-email" name="email" type="email" class="contact-input" maxlength="200" required autocomplete="email">
+        </div>
+
+        <div class="contact-field">
+          <label for="cf-phone">電話番号 <span class="opt">(任意)</span></label>
+          <input id="cf-phone" name="phone" type="tel" class="contact-input" maxlength="30" autocomplete="tel">
+        </div>
+
+        <div class="contact-field">
+          <label for="cf-message">ご相談内容 <span class="opt">(任意)</span></label>
+          <textarea id="cf-message" name="message" class="contact-textarea" maxlength="2000" placeholder="例: 福利厚生としての導入を検討しています。従業員 500 名規模での運用イメージを伺いたいです。"></textarea>
+          <div class="hint">2000 文字まで</div>
+        </div>
+
+        <div class="contact-status" id="contactStatus" role="status" aria-live="polite"></div>
+
+        <button type="submit" class="contact-submit" id="contactSubmit">送信する</button>
+
+        <p class="contact-privacy">送信内容は ReliefNote 運営にのみ届きます。<br>第三者に提供されることはありません。</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo-header-v2.png" alt="ReliefNote" class="footer-brand-logo">
+          <p class="footer-brand-tag">大切な方を亡くしたあとに、ご遺族が向き合う手続き負担を軽くするサービスを、業界パートナーとともに準備しています。</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Solutions</p>
+          <ul class="footer-links">
+            <li><a href="for-funeral.html">葬儀社さま向け</a></li>
+            <li><a href="for-insurance.html">生命保険会社さま向け</a></li>
+            <li><a href="for-benefits.html">福利厚生さま向け</a></li>
+            <li><a href="for-financial.html">金融機関さま向け</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">About</p>
+          <ul class="footer-links">
+            <li><a href="company.html">About ReliefNote</a></li>
+            <li><a href="company.html#mission">ミッション</a></li>
+            <li><a href="company.html#founder">創業者ノート</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="contact.html">資料請求 / 商談予約</a></li>
+            <li><a href="mailto:reliefnote@gmail.com">reliefnote@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Legal</p>
+          <ul class="footer-links">
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">利用規約</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 ReliefNote</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== URL クエリから 「ご希望」「業種」「プラン」を初期選択 ======
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var type = params.get('type');     // document / meeting
+      var industry = params.get('industry'); // funeral / insurance / benefits / financial
+      var plan = params.get('plan');     // starter / standard / premium
+
+      if (type) {
+        var radio = document.querySelector('input[name="role"][value="' + type + '"]');
+        if (radio) radio.checked = true;
+      }
+      if (industry) {
+        var sel = document.getElementById('cf-industry');
+        if (sel) sel.value = industry;
+      }
+      if (plan) {
+        var msg = document.getElementById('cf-message');
+        if (msg && !msg.value) {
+          msg.value = '【' + plan.toUpperCase() + ' プランに関心があります】\n';
+        }
+      }
+    })();
+
+    // ====== 問い合わせフォーム送信 ======
+    (function() {
+      var SUPABASE_URL = 'https://yxsjqsxjjugvwkxpkypn.supabase.co';
+      var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl4c2pxc3hqanVndndreHBreXBuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1NTMxMzQsImV4cCI6MjA4OTEyOTEzNH0.vjrRMcjZZThjHY5P3zlz1uJJ0Y2awHqyI1h1AFvO2jk';
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      var status = document.getElementById('contactStatus');
+      var submit = document.getElementById('contactSubmit');
+      var lastSentAt = 0;
+
+      function setStatus(kind, msg) {
+        status.className = 'contact-status ' + kind;
+        status.textContent = msg;
+      }
+      function clearStatus() {
+        status.className = 'contact-status';
+        status.textContent = '';
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        clearStatus();
+
+        var data = new FormData(form);
+        var role = data.get('role');
+        var industry = (data.get('industry') || '').trim();
+        var organization = (data.get('organization') || '').trim();
+        var name = (data.get('name') || '').trim();
+        var email = (data.get('email') || '').trim();
+        var phone = (data.get('phone') || '').trim();
+        var message = (data.get('message') || '').trim();
+
+        if (!role) { setStatus('error', 'ご希望を選択してください'); return; }
+        if (!industry) { setStatus('error', '業種を選択してください'); return; }
+        if (!organization) { setStatus('error', '貴社名を入力してください'); return; }
+        if (!name) { setStatus('error', 'ご担当者名を入力してください'); return; }
+        if (!email || !/.+@.+\..+/.test(email)) { setStatus('error', '有効なメールアドレスを入力してください'); return; }
+
+        var now = Date.now();
+        if (now - lastSentAt < 60 * 1000) {
+          setStatus('error', '送信は 1 分に 1 回までにしてください');
+          return;
+        }
+
+        submit.disabled = true;
+        submit.textContent = '送信中...';
+
+        var messageWithMeta = '[業種: ' + industry + ']\n' + (message || '（特記事項なし）');
+
+        var payload = {
+          role: role,
+          name: name,
+          email: email,
+          organization: organization,
+          phone: phone || null,
+          message: messageWithMeta,
+          source: document.referrer || null,
+          user_agent: navigator.userAgent.slice(0, 300)
+        };
+
+        fetch(SUPABASE_URL + '/rest/v1/contact_inquiries', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(payload)
+        }).then(function(res) {
+          if (res.ok) {
+            lastSentAt = Date.now();
+            setStatus('success', 'お問い合わせを受け付けました。2 営業日以内にご返信いたします。');
+            form.reset();
+          } else {
+            return res.text().then(function(t) {
+              console.warn('Submit failed:', res.status, t);
+              setStatus('error', '送信に失敗しました。お手数ですが reliefnote@gmail.com までメールでご連絡ください。');
+            });
+          }
+        }).catch(function(err) {
+          console.warn('Submit error:', err);
+          setStatus('error', '通信エラーが発生しました。ネットワーク状況をご確認のうえ、再度お試しください。');
+        }).then(function() {
+          submit.disabled = false;
+          submit.textContent = '送信する';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
