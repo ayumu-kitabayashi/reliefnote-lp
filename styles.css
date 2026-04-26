@@ -3714,3 +3714,543 @@
 @media (max-width: 600px) {
   .customers .container { padding: 0 24px; gap: 12px; }
 }
+
+/* ============================================
+   v2 編集的パターン (index.html メリハリ強化)
+   ============================================ */
+
+/* ---- 共通: 編集的セクションマーカー ---- */
+.section-marker {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto 28px;
+  padding: 0 48px 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.section-marker-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--warm-accent);
+  letter-spacing: 0;
+  line-height: 1;
+}
+.section-marker-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .section-marker { padding: 0 24px 14px; gap: 14px; }
+  .section-marker-num { font-size: 18px; }
+}
+
+/* ---- 共通: アクセント手書きハイライト (見出し内キーワード) ---- */
+.accent-mark {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+.accent-mark::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: 0.06em;
+  height: 0.32em;
+  background: rgba(185, 95, 62, 0.20);
+  border-radius: 4px 8px 6px 10px / 4px 10px 4px 8px;
+  z-index: -1;
+  transform: rotate(-0.4deg);
+}
+
+/* ---- Statement: pull-quote 風に作り直し ---- */
+.statement {
+  padding: 160px 0 140px;
+}
+.statement::before,
+.statement::after { display: none; }
+.statement-inner {
+  max-width: 1080px;
+  padding: 0 48px;
+  text-align: left;
+  position: relative;
+}
+.statement-mark {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(120px, 18vw, 220px);
+  font-weight: 700;
+  color: var(--warm-accent);
+  line-height: 0.7;
+  display: block;
+  margin-bottom: -32px;
+  letter-spacing: -0.04em;
+  opacity: 0.95;
+}
+.statement-text {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
+  font-size: clamp(24px, 3.4vw, 42px);
+  line-height: 1.85;
+  color: var(--text-primary);
+  letter-spacing: 0.005em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  margin-left: 8%;
+}
+.statement-attribution {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 48px;
+  margin-left: 8%;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.statement-attribution-rule {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--text-tertiary);
+}
+@media (max-width: 768px) {
+  .statement { padding: 96px 0 80px; }
+  .statement-inner { padding: 0 24px; }
+  .statement-mark { font-size: 96px; margin-bottom: -16px; }
+  .statement-text { margin-left: 0; }
+  .statement-attribution { margin-left: 0; }
+}
+
+/* ---- Solutions: Featured + 3 Compact ---- */
+.solutions {
+  padding: 140px 0 160px;
+}
+.solutions .container {
+  max-width: 1180px;
+  padding: 0 48px;
+}
+.solutions-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4.4vw, 56px);
+  line-height: 1.45;
+  color: var(--text-primary);
+  letter-spacing: -0.014em;
+  word-break: keep-all;
+  margin-bottom: 72px;
+  max-width: 880px;
+}
+
+/* Feature row */
+.solution-feature {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 56px;
+  padding: 56px 0 64px;
+  border-top: 2px solid var(--text-primary);
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.25s ease;
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.solution-feature:hover {
+  background: var(--bg-warm);
+}
+.solution-feature-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.solution-feature-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 700;
+  color: var(--warm-accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.solution-feature-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.solution-feature-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+  letter-spacing: -0.014em;
+  word-break: keep-all;
+  margin-bottom: 16px;
+}
+.solution-feature-pitch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: var(--text-primary);
+  line-height: 1.75;
+  font-weight: 500;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.solution-feature-desc {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.95;
+  max-width: 580px;
+  margin-bottom: 28px;
+}
+.solution-feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--text-primary);
+  padding-bottom: 4px;
+  transition: gap 0.2s ease;
+}
+.solution-feature-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+.solution-feature:hover .solution-feature-link svg {
+  transform: translateX(4px);
+}
+
+/* Compact rows (02, 03, 04) */
+.solutions-compact {
+  display: flex;
+  flex-direction: column;
+}
+.solution-compact {
+  display: grid;
+  grid-template-columns: 220px 1fr 32px;
+  gap: 56px;
+  align-items: center;
+  padding: 32px 16px;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.25s ease, padding 0.25s ease;
+}
+.solution-compact:hover {
+  background: var(--bg-warm);
+  padding-left: 28px;
+}
+.solution-compact-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--warm-accent);
+  line-height: 1;
+  letter-spacing: 0;
+}
+.solution-compact-tag {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.solution-compact-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.5;
+  letter-spacing: -0.008em;
+  margin-bottom: 4px;
+  word-break: keep-all;
+}
+.solution-compact-pitch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 500;
+}
+.solution-compact-arrow {
+  width: 18px;
+  height: 18px;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.solution-compact:hover .solution-compact-arrow {
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+@media (max-width: 768px) {
+  .solutions { padding: 80px 0 96px; }
+  .solutions-heading { margin-bottom: 40px; }
+  .solution-feature {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 36px 16px;
+  }
+  .solution-feature-meta { flex-direction: row; align-items: baseline; gap: 16px; }
+  .solution-feature-num { font-size: 36px; }
+  .solution-feature-title { font-size: 26px; margin-bottom: 12px; }
+  .solution-compact {
+    grid-template-columns: 56px 1fr 20px;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+  .solution-compact:hover { padding-left: 16px; }
+  .solution-compact-num { font-size: 22px; }
+}
+
+/* ---- Platform: 2-col 編集 spread ---- */
+.platform {
+  padding: 140px 0 160px;
+}
+.platform .container {
+  max-width: 1180px;
+  padding: 0 48px;
+}
+.platform-spread {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 96px;
+  align-items: start;
+}
+.platform-spread-lead {
+  position: sticky;
+  top: 120px;
+}
+.platform-spread-lead .section-marker {
+  margin: 0 0 24px;
+  padding: 0 0 18px;
+  max-width: none;
+}
+.platform-spread-lead .platform-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3.8vw, 48px);
+  line-height: 1.5;
+  color: var(--text-primary);
+  letter-spacing: -0.014em;
+  word-break: keep-all;
+  margin-bottom: 28px;
+}
+.platform-lead-note {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.95;
+  max-width: 380px;
+}
+.platform-spread-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.platform-spread-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.platform-spread-item:first-child {
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+.platform-spread-item-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--warm-accent);
+  letter-spacing: 0.12em;
+  padding-top: 8px;
+}
+.platform-spread-item-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.5;
+  letter-spacing: -0.008em;
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+.platform-spread-item-desc {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.95;
+}
+@media (max-width: 900px) {
+  .platform { padding: 80px 0 96px; }
+  .platform-spread {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .platform-spread-lead { position: static; }
+}
+
+/* ---- Numbers: section-marker 統合 ---- */
+.numbers {
+  padding: 120px 0 140px;
+}
+.numbers .container {
+  max-width: 1180px;
+  padding: 0 48px;
+}
+.numbers .numbers-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.5;
+  color: var(--text-primary);
+  letter-spacing: -0.012em;
+  margin-bottom: 56px;
+  word-break: keep-all;
+  max-width: 760px;
+}
+.numbers .numbers-hero {
+  margin: 0;
+  padding: 64px 0;
+}
+.numbers .numbers-supporting {
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+/* ---- About preview: pull-quote + 署名スタイルへ ---- */
+.about-preview {
+  padding: 140px 0 160px;
+}
+.about-preview .about-preview-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  grid-template-columns: none;
+  gap: 0;
+}
+.about-preview .section-marker {
+  margin: 0 auto 48px;
+}
+.about-preview-quote {
+  margin: 0 auto 64px;
+  padding: 0 48px;
+  border: none;
+  max-width: 1180px;
+}
+.about-preview-quote p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.45;
+  letter-spacing: -0.018em;
+  word-break: keep-all;
+  margin: 0;
+}
+.about-preview-meta {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 48px 0;
+  border-top: 1px solid var(--rule);
+}
+.about-preview .about-preview-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--bg-warm-deep);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.about-preview .about-preview-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-preview-meta-text { min-width: 0; }
+.about-preview-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.about-preview-name-en {
+  font-family: -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 0.06em;
+}
+.about-preview .about-preview-text {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.95;
+  margin: 16px 0 24px;
+  max-width: 640px;
+}
+.about-preview .about-preview-link {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 768px) {
+  .about-preview { padding: 80px 0 96px; }
+  .about-preview-quote { padding: 0 24px; }
+  .about-preview-meta {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 24px 0;
+  }
+  .about-preview .about-preview-avatar { width: 88px; height: 88px; }
+}
+
+/* ---- CTA: 編集的マーカー (ダーク背景版) ---- */
+.ctaband-marker {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+.ctaband-marker-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #d3a98e;
+  line-height: 1;
+}
+.ctaband-marker-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
