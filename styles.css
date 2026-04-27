@@ -3800,14 +3800,22 @@
   letter-spacing: 0.005em;
   word-break: keep-all;
   overflow-wrap: anywhere;
+}
+.statement-mark + .statement-text,
+.statement-mark ~ .statement-attribution {
   margin-left: 8%;
+}
+.statement-text--secondary {
+  font-size: clamp(18px, 2.4vw, 26px);
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-top: 32px;
 }
 .statement-attribution {
   display: flex;
   align-items: center;
   gap: 18px;
   margin-top: 48px;
-  margin-left: 8%;
   font-size: 11px;
   font-weight: 600;
   color: var(--text-tertiary);
@@ -3824,8 +3832,8 @@
   .statement { padding: 96px 0 80px; }
   .statement-inner { padding: 0 24px; }
   .statement-mark { font-size: 96px; margin-bottom: -16px; }
-  .statement-text { margin-left: 0; }
-  .statement-attribution { margin-left: 0; }
+  .statement-mark + .statement-text,
+  .statement-mark ~ .statement-attribution { margin-left: 0; }
 }
 
 /* ---- Solutions: Featured + 3 Compact ---- */
