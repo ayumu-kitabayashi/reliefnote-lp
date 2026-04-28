@@ -1,9 +1,9 @@
-# ReliefNote — Corporate HP
+# iisana — Corporate HP
 
-ご遺族の手続き支援サービス「ReliefNote」のコーポレートサイト。
+ご遺族の手続き支援サービス「iisana」のコーポレートサイト。
 葬儀社・生命保険・福利厚生・金融機関のパートナーとともに展開する B2B ソリューションを業界別に提案します。
 
-公開URL: <https://reliefnote.jp>
+公開URL: <https://iisana.com>
 
 ## ページ構成
 
@@ -33,13 +33,13 @@
 
 ## 法人化前提
 
-ReliefNote は現時点で法人化されていません。
-- 「ReliefNote, Inc.」「株式会社」「会社概要」「代表」等の表記は使用しません
+iisana は現時点で法人化されていません。
+- 「iisana, Inc.」「株式会社」「会社概要」「代表」等の表記は使用しません
 - About ページは「現在の活動状況」として、法人化準備中である旨を明示しています
 
 ## デプロイ
 
-- ホスティング: GitHub Pages（CNAME: `reliefnote.jp`）
+- ホスティング: GitHub Pages（CNAME: `iisana.com`）
 - main ブランチへの push で自動デプロイされます
 
 ## ローカル確認
