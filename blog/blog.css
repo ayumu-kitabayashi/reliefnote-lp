@@ -1,0 +1,95 @@
+/* ReliefNote ブログ 共有スタイル（LPのモダン系に合わせる） */
+:root{
+  --ink:#1E211B; --ink-2:#5F6459; --ink-3:#9A9E94;
+  --bg:#FFFFFF; --bg-2:#F6F7F4; --card:#FFFFFF;
+  --line:#EAEBE6; --line-2:#E0E1DB;
+  --g1:#3E8F87; --g2:#6E8FD6; --grad:linear-gradient(96deg,var(--g1),var(--g2));
+  --sans:'Noto Sans JP',system-ui,-apple-system,sans-serif;
+  --sh-sm:0 1px 2px rgba(30,33,27,.05), 0 8px 24px -12px rgba(30,33,27,.10);
+  --sh:0 30px 60px -24px rgba(30,33,27,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;overflow-wrap:anywhere}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-weight:900;line-height:1.4;letter-spacing:-.01em;text-wrap:balance}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{height:30px;width:auto}
+nav{display:flex;align-items:center;gap:4px}
+nav a{padding:8px 14px;font-size:14px;color:var(--ink-2);font-weight:500;border-radius:8px}
+nav a:hover{color:var(--ink);background:var(--bg-2)}
+nav a.cta{background:var(--ink);color:#fff;padding:10px 18px;margin-left:8px}
+@media(max-width:720px){nav a:not(.cta){display:none}}
+
+.eyebrow{font-size:12.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:700;margin-bottom:14px}
+.muted{color:var(--ink-3);font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:14px 24px;border-radius:12px;font-weight:700;font-size:15px;box-shadow:var(--sh-sm)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* blog index */
+.blog-hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+.blog-hero h1{font-size:clamp(28px,4vw,40px)}
+.blog-hero p{margin-top:14px;color:var(--ink-2);font-weight:500;max-width:620px}
+.posts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:56px 0 80px}
+@media(max-width:760px){.posts{grid-template-columns:1fr}}
+.post{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--sh-sm);transition:transform .18s ease, box-shadow .18s ease}
+.post:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.post.soon{opacity:.6;pointer-events:none}
+.post .tag{display:inline-block;font-size:12px;font-weight:800;color:var(--g1);letter-spacing:.04em;margin-bottom:12px}
+.post h2{font-size:20px;line-height:1.5;margin-bottom:10px}
+.post p{font-size:14px;color:var(--ink-2);font-weight:500}
+.post .meta{margin-top:16px;font-size:12px;color:var(--ink-3)}
+
+/* article */
+.article{max-width:720px;margin:0 auto;padding:48px 24px 40px}
+.breadcrumb{font-size:13px;color:var(--ink-3);margin-bottom:22px}
+.breadcrumb a:hover{color:var(--ink)}
+.article .tag{font-size:12.5px;font-weight:800;color:var(--g1);letter-spacing:.05em}
+.article h1{font-size:clamp(26px,4vw,36px);line-height:1.45;margin:12px 0 16px}
+.article .pubmeta{font-size:13px;color:var(--ink-3);display:flex;gap:14px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.answer{background:var(--bg-2);border:1px solid var(--line);border-left:4px solid var(--g1);border-radius:12px;padding:22px 24px;margin:0 0 34px}
+.answer .lbl{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--g1);margin-bottom:8px}
+.answer p{font-size:15.5px;color:var(--ink);font-weight:600;line-height:1.85}
+.toc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:0 0 36px}
+.toc b{font-size:13px;color:var(--ink-2);letter-spacing:.04em}
+.toc ol{margin:10px 0 0;padding-left:20px}
+.toc li{font-size:14.5px;margin:6px 0;color:var(--ink-2)}
+.toc a:hover{color:var(--g1)}
+.article h2{font-size:23px;margin:44px 0 14px;padding-top:8px}
+.article h3{font-size:18px;margin:28px 0 10px}
+.article p{font-size:16px;color:#2c2f28;margin:14px 0;line-height:1.95}
+.article ul,.article ol{margin:14px 0;padding-left:22px}
+.article li{font-size:16px;margin:8px 0;line-height:1.9}
+.article strong{font-weight:700}
+.callout{background:var(--bg-2);border-radius:12px;padding:18px 22px;margin:22px 0;font-size:14.5px;color:var(--ink-2)}
+.deadline-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px}
+.deadline-table th,.deadline-table td{border:1px solid var(--line);padding:11px 14px;text-align:left}
+.deadline-table th{background:var(--bg-2);font-weight:700}
+.faq-q{font-weight:800;font-size:17px;margin:26px 0 6px}
+.faq-a{font-size:15.5px;color:#2c2f28}
+
+/* app cta */
+.appcta{background:var(--ink);color:#fff;border-radius:20px;padding:40px 32px;margin:48px 0 0;text-align:center;position:relative;overflow:hidden}
+.appcta::before{content:"";position:absolute;inset:0;background:radial-gradient(100% 80% at 50% 0%, rgba(110,143,214,.30), transparent 65%)}
+.appcta .in{position:relative}
+.appcta h3{color:#fff;font-size:22px}
+.appcta p{color:rgba(255,255,255,.72);font-size:14.5px;margin:10px 0 20px;font-weight:500}
+.appcta .btn{background:#fff;color:var(--ink)}
+
+/* author */
+.author{display:flex;gap:14px;align-items:center;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.author img{width:48px;height:48px;border-radius:50%}
+.author b{font-size:15px}
+.author span{font-size:13px;color:var(--ink-3);display:block}
+
+/* footer */
+footer{padding:52px 0 68px;color:var(--ink-2);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
+footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+footer a{color:var(--ink-2);padding:4px 12px 4px 0}
+footer a:hover{color:var(--ink)}
+.fineprint{margin-top:26px;font-size:12px;color:var(--ink-3);line-height:1.75}

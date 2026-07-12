@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /appstore/
+Disallow: /_legacy/
+Disallow: /blog/GENERATION-SPEC.md
+
+Sitemap: https://reliefnote.jp/sitemap.xml

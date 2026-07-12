@@ -1,398 +1,369 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iisana｜「お別れのあと」も寄り添える社会へ — 葬儀社・生命保険・福利厚生・金融機関のためのインフラ</title>
-  <meta name="description" content="大切な方を亡くしたあとに直面する 100 を超える手続き。その負担を軽くするアプリと専任サポートを、葬儀社・生命保険・福利厚生・金融機関のパートナーとともに、社会インフラとして提供する iisana の公式サイト。">
-  <meta name="theme-color" content="#3F453F">
-  <link rel="canonical" href="https://iisana.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReliefNote｜親の大切な情報を1か所に。もしもの時、家族が困らない。</title>
+<meta name="description" content="口座・保険・契約・連絡先——親の大切な情報を今のうちに1か所へ。入院・介護・相続、万一のときに必要な手続きまでご案内し、家族がお金と手続きで困らないようにするアプリ、ReliefNote。無料。">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://reliefnote.jp/">
+<meta property="og:title" content="ReliefNote｜親の大切な情報を1か所に。もしもの時、家族が困らない。">
+<meta property="og:description" content="口座・保険・契約・連絡先を今のうちに1か所へ。もしもの時に必要な手続きまでご案内し、家族がお金と手続きで困らないようにします。">
+<meta property="og:url" content="https://reliefnote.jp/">
+<meta property="og:image" content="https://reliefnote.jp/images/logo-header.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="images/logo-mark.png">
+<link rel="apple-touch-icon" href="images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E211B; --ink-2:#5F6459; --ink-3:#9A9E94;
+  --bg:#FFFFFF; --bg-2:#F6F7F4; --card:#FFFFFF;
+  --line:#EAEBE6; --line-2:#E0E1DB;
+  --g1:#3E8F87; --g2:#6E8FD6;            /* グラデ差し色（teal→periwinkle）。要点1語に使用・変更容易 */
+  --grad:linear-gradient(96deg,var(--g1),var(--g2));
+  --sans:'Noto Sans JP',system-ui,-apple-system,sans-serif;
+  --wrap:1120px;
+  --sh-sm:0 1px 2px rgba(30,33,27,.05), 0 8px 24px -12px rgba(30,33,27,.10);
+  --sh:0 30px 60px -24px rgba(30,33,27,.18);
+  --sh-phone:0 44px 90px -30px rgba(30,33,27,.30);
+  --r:16px; --r-lg:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-wrap:anywhere}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-weight:900;line-height:1.32;letter-spacing:-.01em;line-break:strict;text-wrap:balance}
+p{line-break:strict}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+svg{display:block}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 
-  <meta property="og:title" content="iisana｜「お別れのあと」も寄り添える社会へ">
-  <meta property="og:description" content="葬儀社・生命保険・福利厚生・金融機関のパートナーとともに、ご遺族の手続き負担を軽くする社会インフラを提供します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://iisana.com/">
-  <meta property="og:image" content="https://iisana.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="iisana">
-  <meta property="og:locale" content="ja_JP">
+.eyebrow{font-size:12.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:700;margin-bottom:18px}
+.lead{font-size:16.5px;color:var(--ink-2);max-width:560px;line-height:1.85;font-weight:500}
+.muted{color:var(--ink-3);font-size:13px}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="iisana｜「お別れのあと」も寄り添える社会へ">
-  <meta name="twitter:description" content="葬儀社・生命保険・福利厚生・金融機関のパートナーとともに、ご遺族の手続き負担を軽くする社会インフラを。">
-  <meta name="twitter:image" content="https://iisana.com/og-image.png">
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;padding:14px 24px;border-radius:12px;
+  font-weight:700;font-size:15px;transition:transform .16s ease, box-shadow .16s ease;box-shadow:var(--sh-sm)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2);box-shadow:none}
+.btn.ghost:hover{background:var(--bg-2)}
+.btn .arw{transition:transform .16s ease}
+.btn:hover .arw{transform:translateX(3px)}
+/* App Store badge風 */
+.appbtn{display:inline-flex;align-items:center;gap:11px;background:var(--ink);color:#fff;border-radius:13px;padding:11px 20px;transition:transform .16s ease}
+.appbtn:hover{transform:translateY(-2px)}
+.appbtn svg{width:22px;height:22px;fill:#fff;flex:none}
+.appbtn .t{display:flex;flex-direction:column;line-height:1.05;text-align:left}
+.appbtn .t small{font-size:10px;font-weight:500;opacity:.8;letter-spacing:.02em}
+.appbtn .t b{font-size:17px;font-weight:700}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "iisana",
-    "alternateName": "イーサナ",
-    "url": "https://iisana.com/",
-    "logo": "https://iisana.com/logo-icon.png",
-    "description": "葬儀社・生命保険・福利厚生・金融機関のパートナーとともに、ご遺族の手続き負担を軽くするサービスを開発しているプロジェクト。法人化準備中。",
-    "founder": {
-      "@type": "Person",
-      "name": "北林 歩",
-      "alternateName": "Ayumu Kitabayashi"
-    },
-    "email": "ayumu.kitabayashi@iisana.com"
-  }
-  </script>
+section{padding:72px 0}
+.section-head{max-width:760px;margin-bottom:40px}
+.section-head h2{font-size:clamp(23px,2.9vw,31px);line-height:1.42}
+.section-head p{margin-top:16px}
+.alt{background:var(--bg-2)}
 
-  <link rel="icon" href="logo-icon.png">
-  <link rel="apple-touch-icon" href="logo-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+[data-anim]{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-anim].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-anim]{opacity:1;transform:none;transition:none}}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.78);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{height:32px;width:auto}
+nav{display:flex;align-items:center;gap:4px}
+nav a.link{padding:8px 14px;font-size:14px;color:var(--ink-2);font-weight:500;border-radius:8px}
+nav a.link:hover{color:var(--ink);background:var(--bg-2)}
+nav .btn{margin-left:8px;padding:10px 18px}
+@media(max-width:820px){nav a.link{display:none}}
+
+/* phone */
+.phone{position:relative;width:270px;border-radius:46px;background:#111;padding:11px;box-shadow:var(--sh-phone)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#111;border-radius:14px;z-index:3}
+.phone img{width:100%;border-radius:36px;display:block}
+.phone.sm{width:250px;border-radius:42px;padding:10px}
+.phone.sm img{border-radius:32px}
+.stage{position:relative;display:flex;justify-content:center;align-items:center}
+.stage::before{content:"";position:absolute;width:118%;height:86%;border-radius:40px;background:radial-gradient(120% 120% at 50% 30%, rgba(110,143,214,.10), rgba(62,143,135,.06) 55%, rgba(255,255,255,0) 78%);filter:blur(4px)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:72px 0 84px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.hero h1{font-size:clamp(30px,3.9vw,46px);line-height:1.34;letter-spacing:-.02em}
+.hero .grad{white-space:nowrap}
+.hero .phone{width:248px}
+.hero .lead{margin-top:24px;font-size:17px}
+.hero .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero .trust{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--ink-3);font-weight:500}
+.hero .trust span{display:inline-flex;align-items:center;gap:7px}
+.hero .trust span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--g1)}
+@media(max-width:880px){.hero .wrap{grid-template-columns:1fr;gap:20px}.stage{margin-top:24px}}
+
+/* why */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:820px){.pains{grid-template-columns:1fr}}
+.pain{padding:28px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-sm)}
+.pain .no{font-size:13px;font-weight:900;color:var(--g1);letter-spacing:.05em}
+.pain h3{font-size:18px;margin:10px 0 8px;font-weight:800}
+.pain p{font-size:14.5px;color:var(--ink-2);font-weight:500}
+.why-note{margin-top:32px;font-size:16px;color:var(--ink-2);font-weight:500}
+.why-note b{color:var(--ink);font-weight:700}
+
+/* triad */
+.triad{font-size:clamp(24px,3.4vw,34px);font-weight:900;letter-spacing:-.02em;line-height:1.3}
+.triad .s2{color:var(--ink-3)}
+
+/* showcase */
+.show{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:34px 0}
+.show.rev .txt{order:2}.show.rev .media{order:1}
+@media(max-width:880px){.show{grid-template-columns:1fr;gap:36px;padding:40px 0}.show .txt{order:2}.show .media{order:1}}
+.show .label{font-size:12px;letter-spacing:.12em;font-weight:900;color:var(--g1);margin-bottom:14px}
+.show h3{font-size:clamp(22px,3vw,30px);margin-bottom:14px;font-weight:900;letter-spacing:-.01em}
+.show p{font-size:15.5px;color:var(--ink-2);max-width:460px;font-weight:500}
+.mini{margin-top:22px;display:grid;gap:14px}
+.mini .m{display:flex;gap:13px;align-items:flex-start}
+.mini .m .mi{width:36px;height:36px;border-radius:10px;background:var(--bg-2);display:flex;align-items:center;justify-content:center;flex:none}
+.mini .m b{font-size:15px;font-weight:800}
+.mini .m span{font-size:13.5px;color:var(--ink-2);display:block;font-weight:500}
+
+/* scenes */
+.scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.scenes{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.scenes{grid-template-columns:1fr}}
+.scene{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;align-items:center;gap:12px;transition:transform .18s ease, box-shadow .18s ease}
+.scene:hover{transform:translateY(-2px);box-shadow:var(--sh-sm)}
+.scene .dot{width:8px;height:8px;border-radius:50%;background:var(--g1);flex:none}
+.scene b{font-size:16px;font-weight:800}
+
+/* price */
+.price{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:44px;max-width:640px;margin:0 auto;text-align:center;box-shadow:var(--sh)}
+.price .cap{font-size:12.5px;letter-spacing:.14em;color:var(--ink-3);font-weight:700}
+.price .free{font-size:60px;font-weight:900;line-height:1.05;margin:8px 0 6px;letter-spacing:-.03em}
+.price .sub{font-size:14.5px;color:var(--ink-2);font-weight:500}
+.price .disc{margin-top:26px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2);font-weight:500}
+.price .disc b{color:var(--ink);font-weight:700}
+
+/* faq */
+.faq{max-width:780px;margin:0 auto}
+details{border:1px solid var(--line);border-radius:14px;padding:4px 22px;margin-bottom:12px;background:var(--card);transition:box-shadow .2s}
+details[open]{box-shadow:var(--sh-sm)}
+summary{font-weight:800;font-size:16.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--g1);font-weight:700;font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details .a{padding:0 0 20px;font-size:14.5px;color:var(--ink-2);font-weight:500}
+
+/* final */
+.final{position:relative;overflow:hidden;background:var(--ink);color:#fff;text-align:center;border-radius:28px;padding:80px 28px}
+.final::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% -10%, rgba(110,143,214,.35), rgba(62,143,135,.12) 45%, transparent 70%)}
+.final .in{position:relative}
+.final h2{color:#fff;font-size:clamp(26px,4.2vw,42px);letter-spacing:-.02em}
+.final p{color:rgba(255,255,255,.72);margin-top:16px;max-width:520px;margin-left:auto;margin-right:auto;font-weight:500}
+.final .cta2{margin-top:32px;display:flex;justify-content:center}
+.final .appbtn{background:#fff;color:var(--ink)}
+.final .appbtn svg{fill:var(--ink)}
+
+/* footer */
+footer{padding:60px 0 76px;color:var(--ink-2);font-size:14px}
+footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-top:1px solid var(--line);padding-top:40px}
+.foot-brand img{height:38px}
+footer .fcol a{display:block;color:var(--ink-2);padding:5px 0;font-size:14px;font-weight:500}
+footer .fcol a:hover{color:var(--ink)}
+.fineprint{margin-top:32px;font-size:12px;color:var(--ink-3);line-height:1.75}
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="index.html"><img src="logo-header-v2.png" alt="iisana" class="header-logo"></a>
-      <nav class="header-nav">
-        <div class="header-nav-item">
-          <a href="#solutions">ソリューション <span class="chevron"></span></a>
-          <div class="header-dropdown" role="menu">
-            <a href="for-funeral.html">
-              <span class="header-dropdown-tag">For Funeral</span>
-              <span class="header-dropdown-title">葬儀社さま向け</span>
-            </a>
-            <a href="for-insurance.html">
-              <span class="header-dropdown-tag">For Life Insurance</span>
-              <span class="header-dropdown-title">生命保険会社さま向け</span>
-            </a>
-            <a href="for-benefits.html">
-              <span class="header-dropdown-tag">For Employers</span>
-              <span class="header-dropdown-title">福利厚生（雇用主）さま向け</span>
-            </a>
-            <a href="for-financial.html">
-              <span class="header-dropdown-tag">For Financial</span>
-              <span class="header-dropdown-title">金融機関さま向け</span>
-            </a>
-          </div>
-        </div>
-        <div class="header-nav-item"><a href="company.html">About</a></div>
-        <div class="header-nav-item"><a href="contact.html">お問い合わせ</a></div>
-      </nav>
-      <a href="contact.html" class="header-cta">資料請求 / 商談予約</a>
-    </div>
-  </header>
+<header>
+  <div class="wrap">
+    <a href="#top"><img class="logo" src="images/logo-header.png" alt="ReliefNote"></a>
+    <nav>
+      <a class="link" href="#why">なぜ必要か</a>
+      <a class="link" href="#how">できること</a>
+      <a class="link" href="#price">料金</a>
+      <a class="link" href="blog/">ブログ</a>
+      <a class="btn" href="#start">無料で始める</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero (corporate brand statement) -->
-  <section class="hero">
-    <span class="hero-shape" aria-hidden="true"></span>
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <h1 class="hero-heading">「お別れのあと」も、<br><span class="ink-underline">誰かが寄り添える社会へ。</span></h1>
-          <p class="hero-sub">大切な方を亡くしたあとに、ご遺族が向き合う 100 を超える手続き。その負担を軽くする仕組みを、葬儀社・生命保険・福利厚生・金融機関のパートナーとともに、社会のあらゆる場所に届けていきます。</p>
-          <div class="btn-group">
-            <a href="#solutions" class="btn">業界別ソリューション</a>
-            <a href="contact.html" class="btn btn--ghost">商談を予約する</a>
-          </div>
-          <div class="hero-trust-row">
-            <span class="hero-trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              北海道 北竜町で実証運用中
-            </span>
-            <span class="hero-trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              50 種類超の手続き定義
-            </span>
-          </div>
-        </div>
-        <div class="hero-mockup-wrap" aria-hidden="true">
-          <svg class="hero-mockup" viewBox="0 0 360 690" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="iisana アプリ画面">
-            <defs>
-              <clipPath id="screenClip">
-                <rect x="14" y="14" width="332" height="660" rx="42"/>
-              </clipPath>
-            </defs>
-            <rect x="6" y="6" width="348" height="678" rx="48" fill="#1a1a1a"/>
-            <rect x="14" y="14" width="332" height="660" rx="42" fill="#F5F4F1"/>
-            <g clip-path="url(#screenClip)">
-              <image href="images/app-home.png" x="14" y="14" width="332" height="660" preserveAspectRatio="xMidYMid slice"/>
-            </g>
-            <rect x="148" y="26" width="64" height="22" rx="11" fill="#1a1a1a"/>
-            <rect x="130" y="664" width="100" height="4" rx="2" fill="#1a1a1a" opacity="0.35"/>
-          </svg>
-          <p class="hero-mockup-caption">ご遺族の手元に届く、<strong>iisana アプリ</strong></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Brand statement -->
-  <section class="statement">
-    <div class="statement-inner">
-      <span class="statement-mark" aria-hidden="true">&ldquo;</span>
-      <p class="statement-text">
-        人生で最も<span class="accent">つらい時期</span>を迎えたご遺族のために、<br>
-        手続きの「分からない」を、社会のインフラとして解消する。
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div data-anim>
+      <p class="eyebrow">家族の重要情報マネージャ</p>
+      <h1>親にもしもがあっても<br>家族がお金と手続きで<br><span class="grad">困らない</span></h1>
+      <p class="lead">
+        口座・保険・契約・連絡先——親の大切な情報を、今のうちに1か所へ。
+        入院・介護・相続、そして万一のとき、必要な手続きまで ReliefNote がご案内します。
       </p>
-      <p class="statement-attribution">
-        <span class="statement-attribution-rule"></span>
-        <span>iisana &middot; Mission</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- Solutions overview (Featured + 3 compact) -->
-  <section class="solutions" id="solutions">
-    <div class="container">
-      <div class="section-marker">
-        <span class="section-marker-num">I</span>
-        <span class="section-marker-label">Solutions &mdash; 4 industries</span>
+      <div class="cta">
+        <a class="appbtn" href="#"><svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.42 2.2-1.13 3.02-.85.98-2.23 1.74-3.38 1.65-.14-1.11.42-2.29 1.09-3.03.79-.9 2.2-1.58 3.42-1.64zM20.5 17.2c-.6 1.35-.9 1.95-1.66 3.14-1.07 1.66-2.58 3.72-4.45 3.74-1.66.02-2.09-1.08-4.35-1.06-2.26.01-2.73 1.08-4.39 1.06-1.87-.02-3.3-1.88-4.37-3.53-3-4.63-3.31-10.06-1.46-12.95 1.31-2.05 3.38-3.25 5.33-3.25 1.98 0 3.23 1.09 4.87 1.09 1.59 0 2.56-1.09 4.85-1.09 1.73 0 3.57.94 4.88 2.57-4.29 2.35-3.59 8.47.6 10.28z"/></svg><span class="t"><small>無料でダウンロード</small><b>App Store</b></span></a>
+        <a class="btn ghost" href="#how">仕組みを見る <span class="arw">→</span></a>
       </div>
-      <h2 class="solutions-heading">それぞれの業界で、<br>ご遺族の<span class="accent-mark">いちばん近く</span>へ。</h2>
-
-      <a href="for-funeral.html" class="solution-feature">
-        <div class="solution-feature-meta">
-          <span class="solution-feature-num">01</span>
-          <span class="solution-feature-tag">For Funeral &mdash; Flagship</span>
-        </div>
-        <div class="solution-feature-body">
-          <h3 class="solution-feature-title">葬儀社さま向け</h3>
-          <p class="solution-feature-pitch">「あの葬儀社さんが、最後まで助けてくれた」。</p>
-          <p class="solution-feature-desc">ご遺族のいちばん最初の窓口である葬儀社さまへ、OEM/ホワイトラベルで提供。アプリと専任サポートを、貴社のブランドでお届けします。</p>
-          <span class="solution-feature-link">詳しく見る
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <div class="solutions-compact">
-        <a href="for-insurance.html" class="solution-compact">
-          <span class="solution-compact-num">02</span>
-          <div>
-            <span class="solution-compact-tag">For Life Insurance</span>
-            <h3 class="solution-compact-title">生命保険会社さま向け</h3>
-            <p class="solution-compact-pitch">保険金の、その先まで支える。</p>
-          </div>
-          <svg class="solution-compact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="for-benefits.html" class="solution-compact">
-          <span class="solution-compact-num">03</span>
-          <div>
-            <span class="solution-compact-tag">For Employers</span>
-            <h3 class="solution-compact-title">福利厚生（雇用主）さま向け</h3>
-            <p class="solution-compact-pitch">従業員の「ご家族のお別れ」に、企業ができること。</p>
-          </div>
-          <svg class="solution-compact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="for-financial.html" class="solution-compact">
-          <span class="solution-compact-num">04</span>
-          <div>
-            <span class="solution-compact-tag">For Financial</span>
-            <h3 class="solution-compact-title">金融機関さま向け</h3>
-            <p class="solution-compact-pitch">相続の手続きを、貴行から始まる安心へ。</p>
-          </div>
-          <svg class="solution-compact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
+      <div class="trust"><span>ずっと無料</span><span>iPhone対応</span><span>登録不要</span><span>家族で共有</span></div>
     </div>
-  </section>
+    <div class="stage" data-anim>
+      <div class="phone"><img src="images/shot-note.png" alt="ReliefNote 家族情報ノートの画面"></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Platform overview (2-col editorial spread) -->
-  <section class="platform">
-    <div class="container">
-      <div class="platform-spread">
-        <div class="platform-spread-lead">
-          <div class="section-marker">
-            <span class="section-marker-num">II</span>
-            <span class="section-marker-label">Platform</span>
-          </div>
-          <h2 class="platform-heading">どの業界向けでも、<br>核は同じ。</h2>
-          <p class="platform-lead-note"><span class="accent-mark">iisana プラットフォーム</span>が、その「同じ」を支えています。業界別の見え方は変わっても、内側の仕組みは変わりません。</p>
+<!-- WHY -->
+<section id="why" class="alt">
+  <div class="wrap">
+    <div class="section-head" data-anim>
+      <p class="eyebrow">なぜ必要か</p>
+      <h2>「どこに何があるか」が分からないだけで<br>家族はお金も手続きも動かせない</h2>
+    </div>
+    <div class="pains">
+      <div class="pain" data-anim><div class="no">01</div><h3>お金を受け取り損ねる</h3><p>口座も保険も分からず、請求すれば戻るお金が、そのまま消える。</p></div>
+      <div class="pain" data-anim style="transition-delay:.08s"><div class="no">02</div><h3>使わないものに払い続ける</h3><p>契約やサブスクを解約できない。スマホのロックも解けない。</p></div>
+      <div class="pain" data-anim style="transition-delay:.16s"><div class="no">03</div><h3>手続きが何か月も止まる</h3><p>どこに何を出すか分からず、役所も相続も進まない。</p></div>
+    </div>
+    <p class="why-note" data-anim>
+      必要な情報は「入院」「介護」「認知症」「災害」でも同じ。
+      <b>ReliefNote は“終活”のためだけの道具ではありません。</b>暮らしを支える、実用の備えです。
+    </p>
+  </div>
+</section>
+
+<!-- HOW / SHOWCASE -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head" data-anim>
+      <p class="eyebrow">できること</p>
+      <div class="triad">整理する<span class="s2">・案内する・つながる</span></div>
+      <p class="lead" style="margin-top:18px">生前に情報を整理し、もしもの後は手続きを案内する。その2つがつながって、家族の負担そのものを減らします。</p>
+    </div>
+
+    <div class="show" data-anim>
+      <div class="txt">
+        <div class="label">01 ─ 整理する</div>
+        <h3>家族情報ノート</h3>
+        <p>口座・保険・契約から医療・お墓まで、全11カテゴリ。書けるところから1か所に。「まず何を書くか」も、アプリが教えてくれます。</p>
+      </div>
+      <div class="media stage"><div class="phone sm"><img src="images/shot-section.png" alt="家族情報ノートの記入画面"></div></div>
+    </div>
+
+    <div class="show rev" data-anim>
+      <div class="txt">
+        <div class="label">02 ─ 案内する</div>
+        <h3>やること ガイド</h3>
+        <p>質問に答えるだけで、約55の手続きから必要なものだけを絞り込み。いつ・どこで・何を、時期順にご案内します。</p>
+      </div>
+      <div class="media stage"><div class="phone sm"><img src="images/shot-guide.png" alt="やることガイドの画面"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 差別化 -->
+<section id="link" class="alt">
+  <div class="wrap">
+    <div class="show" data-anim>
+      <div class="txt">
+        <div class="label">03 ─ つながる ／ ReliefNote ならでは</div>
+        <h3>生前の「記録」が<br>もしもの「手続き」を<span class="grad">助ける</span></h3>
+        <p>生前に記録した情報が、亡くなったあとの手続き画面にそのまま現れます。ばらばらだった「備え」と「手続き」が、ひとつになりました。</p>
+        <div class="mini">
+          <div class="m"><div class="mi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E211B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h6"/></svg></div><div><b>質問が、減る</b><span>記録済みの内容から、もしもの後の質問を自動で省略。</span></div></div>
+          <div class="m"><div class="mi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E211B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><div><b>手続きが、減る</b><span>「該当しない」手続きは、最初から出てきません。</span></div></div>
+          <div class="m"><div class="mi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E211B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><div><b>探す時間が、消える</b><span>必要な情報が、必要な手続きの画面にそのまま。</span></div></div>
         </div>
-        <ol class="platform-spread-list">
-          <li class="platform-spread-item">
-            <span class="platform-spread-item-num">01</span>
-            <div class="platform-spread-item-body">
-              <h3 class="platform-spread-item-title">50 種類超の手続き定義</h3>
-              <p class="platform-spread-item-desc">行政・年金・金融・税務・解約まで、ご遺族が直面する手続きを網羅。法改正に応じて継続的にメンテナンスします。</p>
-            </div>
-          </li>
-          <li class="platform-spread-item">
-            <span class="platform-spread-item-num">02</span>
-            <div class="platform-spread-item-body">
-              <h3 class="platform-spread-item-title">専任スタッフによる伴走</h3>
-              <p class="platform-spread-item-desc">分からないことは、いつでもチャットで相談可能。専門が必要な場面では、提携する士業ネットワークが対応します。</p>
-            </div>
-          </li>
-          <li class="platform-spread-item">
-            <span class="platform-spread-item-num">03</span>
-            <div class="platform-spread-item-body">
-              <h3 class="platform-spread-item-title">パートナーブランドで提供</h3>
-              <p class="platform-spread-item-desc">アプリ画面・配布物・ドメインまで、パートナー企業のブランドに合わせて構築します。OEM 提供が前提のプロダクトです。</p>
-            </div>
-          </li>
-          <li class="platform-spread-item">
-            <span class="platform-spread-item-num">04</span>
-            <div class="platform-spread-item-body">
-              <h3 class="platform-spread-item-title">端末完結のセキュリティ</h3>
-              <p class="platform-spread-item-desc">入力情報はまずご利用者の端末に保存。家族間で共有する場合のみ国内サーバーに暗号化同期し、運営側もデータを読めません。</p>
-            </div>
-          </li>
-        </ol>
+      </div>
+      <div class="media stage"><div class="phone sm"><img src="images/shot-task.png" alt="手続き画面に記録済みの情報が表示される様子"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price">
+  <div class="wrap">
+    <div class="price" data-anim>
+      <p class="cap">料金</p>
+      <div class="free">¥0</div>
+      <p class="sub">ノート作成・手続きガイド・家族共有まで、ずっと無料</p>
+      <div class="disc">
+        自分で難しいことは、相続・遺品整理などのプロに無料で相談することもできます。
+        費用が発生するのは<b>あなたが業者に依頼したときだけ</b>。その紹介料で運営しているので、アプリの利用にあなたの負担はありません。
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Numbers -->
-  <section class="numbers">
-    <div class="container">
-      <div class="section-marker">
-        <span class="section-marker-num">III</span>
-        <span class="section-marker-label">By the numbers</span>
-      </div>
-      <h2 class="numbers-heading">私たちが向き合う、<br>社会の現実。</h2>
-      <div class="numbers-hero">
-        <div class="numbers-hero-num">100<small>超</small></div>
-        <div class="numbers-hero-text">
-          <strong>葬儀のあと、ご遺族が向き合う届出・解約の数。</strong>
-          行政・年金・金融・税務・解約まで含めると、120 を超える例も挙げられています。
-          <span class="src">出典: 複数の相続専門事務所のチェックリストより</span>
-        </div>
-      </div>
-      <div class="numbers-supporting">
-        <div class="numbers-supporting-item">
-          <div class="num">160<small>万人</small></div>
-          年間死亡者数（過去最多）
-          <span class="src">厚生労働省 人口動態統計 2024 年確定数</span>
-        </div>
-        <div class="numbers-supporting-item">
-          <div class="num">50.0<small>%</small></div>
-          家族葬が葬儀形式の最多に
-          <span class="src">鎌倉新書 第 6 回お葬式に関する全国調査 (2024)</span>
-        </div>
-        <div class="numbers-supporting-item">
-          <div class="num">118.5<small>万円</small></div>
-          葬儀費用の全国平均
-          <span class="src">鎌倉新書 第 6 回お葬式に関する全国調査 (2024)</span>
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="section-head" data-anim style="text-align:center;max-width:none">
+      <p class="eyebrow">よくある質問</p>
+      <h2>疑問にお答えします</h2>
+    </div>
+    <div class="faq" data-anim>
+      <details open><summary>亡くなったあとでないと使えませんか？</summary><div class="a">いいえ。むしろ生前からのご利用がおすすめです。入院・介護・相続の備えとして、元気なうちに情報を整理しておくと、いざという時に家族が迷いません。親を案じる子・孫世代が、親のために整理していくこともできます。</div></details>
+      <details><summary>情報は安全に守られますか？</summary><div class="a">家族への共有は暗号化して行い、その鍵は外部サービスを通りません。また、暗証番号やパスワードそのものは書かず「どこに保管してあるか」を記録する設計です。いただいた情報を、手続き以外の目的に使うことはありません。</div></details>
+      <details><summary>何が無料で、何が有料ですか？</summary><div class="a">アプリの機能はすべて無料です。費用が発生するのは、あなたが専門家・業者に依頼したときのみで、それも業者からの紹介料でまかなわれるため、あなたのご負担はありません。無理な勧誘もいたしません。対応端末は現在 iPhone（iOS）です。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="start" style="padding-bottom:100px">
+  <div class="wrap" style="padding:0 24px">
+    <div class="final" data-anim>
+      <div class="in">
+        <h2>いちばん困るのは<br>「その時」になってから</h2>
+        <p>元気なうちに、書けるところから少しだけ。それが、いつか家族を大きく助けます。</p>
+        <div class="cta2">
+          <a class="appbtn" href="#"><svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.42 2.2-1.13 3.02-.85.98-2.23 1.74-3.38 1.65-.14-1.11.42-2.29 1.09-3.03.79-.9 2.2-1.58 3.42-1.64zM20.5 17.2c-.6 1.35-.9 1.95-1.66 3.14-1.07 1.66-2.58 3.72-4.45 3.74-1.66.02-2.09-1.08-4.35-1.06-2.26.01-2.73 1.08-4.39 1.06-1.87-.02-3.3-1.88-4.37-3.53-3-4.63-3.31-10.06-1.46-12.95 1.31-2.05 3.38-3.25 5.33-3.25 1.98 0 3.23 1.09 4.87 1.09 1.59 0 2.56-1.09 4.85-1.09 1.73 0 3.57.94 4.88 2.57-4.29 2.35-3.59 8.47.6 10.28z"/></svg><span class="t"><small>無料でダウンロード</small><b>App Store</b></span></a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Customers (ミニマルストリップ) -->
-  <section class="customers">
-    <div class="container">
-      <span class="customers-eyebrow">Implementation partner</span>
-      <p class="customers-heading">最初のパートナー</p>
-      <div class="customers-list">
-        <span class="customer-item">北海道 北竜町 &middot; 自治体実証</span>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="foot-brand"><img src="images/logo-header.png" alt="ReliefNote"></div>
+      <div class="fcol">
+        <a href="#how">できること</a>
+        <a href="#price">料金</a>
+        <a href="#faq">よくある質問</a>
+        <a href="blog/">ブログ</a>
+      </div>
+      <div class="fcol">
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="#">利用規約</a>
+        <a href="#">お問い合わせ</a>
       </div>
     </div>
-  </section>
+    <p class="fineprint">
+      ReliefNote（リリーフノート）／ 創業者 北林 歩<br>
+      実際の手続きの要否・期限・必要書類は、お住まいの自治体や各機関の案内を必ずご確認ください。ReliefNote は手続きのご案内をするものであり、法務・税務・医療上の助言を提供するものではありません。<br>
+      &copy; ReliefNote
+    </p>
+  </div>
+</footer>
 
-  <!-- About preview (founder pull-quote) -->
-  <section class="about-preview">
-    <div class="about-preview-inner">
-      <div class="section-marker">
-        <span class="section-marker-num">IV</span>
-        <span class="section-marker-label">Founder note</span>
-      </div>
-      <blockquote class="about-preview-quote">
-        <p>人の悲しみを減らす事業を、<br><span class="accent-mark">社会のインフラ</span>に。</p>
-      </blockquote>
-      <div class="about-preview-meta">
-        <div class="about-preview-avatar">
-          <img src="images/founder.jpg" alt="北林 歩" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-family:Noto Serif JP,serif;font-size:36px;font-weight:700;color:#3F453F;&quot;>AK</span>';">
-        </div>
-        <div class="about-preview-meta-text">
-          <p class="about-preview-name">北林 歩 <span class="about-preview-name-en">/ Ayumu Kitabayashi &middot; Founder</span></p>
-          <p class="about-preview-text">明治大学農学部卒。在学中に 1 年間休学し、世界を一周。その旅で「人の悲しみを減らす仕事をしたい」と決めました。葬儀社さま、保険会社さま、雇用主さま、金融機関さま——ご遺族にとっての「いちばん近くの存在」を担う方々と組み、社会全体で支える仕組みを作っていきます。</p>
-          <a href="company.html" class="about-preview-link">
-            創業者ノートを読む
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Simple -->
-  <section class="ctaband-simple">
-    <div class="ctaband-simple-inner">
-      <div>
-        <div class="ctaband-marker">
-          <span class="ctaband-marker-num">V</span>
-          <span class="ctaband-marker-label">Get started</span>
-        </div>
-        <h2 class="ctaband-simple-heading">資料請求・商談予約は、<br>こちらから。</h2>
-        <p class="ctaband-simple-sub">資料・商談ともに無料でご提供しています。情報収集の段階でのお問い合わせも歓迎いたします。</p>
-      </div>
-      <div class="ctaband-simple-actions">
-        <a href="contact.html?type=document" class="ctaband-simple-link ctaband-simple-link--primary">
-          <span class="ctaband-simple-link-text">
-            <span class="ctaband-simple-link-label">資料請求</span>
-            <span class="ctaband-simple-link-desc">サービス資料 PDF をお送りします</span>
-          </span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="contact.html?type=meeting" class="ctaband-simple-link">
-          <span class="ctaband-simple-link-text">
-            <span class="ctaband-simple-link-label">商談予約</span>
-            <span class="ctaband-simple-link-desc">30 分のオンライン商談をご予約</span>
-          </span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="logo-header-v2.png" alt="iisana" class="footer-brand-logo">
-          <p class="footer-brand-tag">大切な方を亡くしたあとに、ご遺族が向き合う手続き負担を軽くするサービスを、業界パートナーとともに準備しています。</p>
-        </div>
-        <div>
-          <p class="footer-col-title">Solutions</p>
-          <ul class="footer-links">
-            <li><a href="for-funeral.html">葬儀社さま向け</a></li>
-            <li><a href="for-insurance.html">生命保険会社さま向け</a></li>
-            <li><a href="for-benefits.html">福利厚生さま向け</a></li>
-            <li><a href="for-financial.html">金融機関さま向け</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">About</p>
-          <ul class="footer-links">
-            <li><a href="company.html">About iisana</a></li>
-            <li><a href="company.html#mission">ミッション</a></li>
-            <li><a href="company.html#founder">創業者ノート</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">Contact</p>
-          <ul class="footer-links">
-            <li><a href="contact.html">資料請求 / 商談予約</a></li>
-            <li><a href="mailto:ayumu.kitabayashi@iisana.com">ayumu.kitabayashi@iisana.com</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">Legal</p>
-          <ul class="footer-links">
-            <li><a href="#">プライバシーポリシー</a></li>
-            <li><a href="#">利用規約</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">© 2026 iisana</p>
-        <div class="footer-meta"></div>
-      </div>
-    </div>
-  </footer>
-
+<script>
+  (function(){
+    var els=[].slice.call(document.querySelectorAll('[data-anim]'));
+    if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion:reduce)').matches){
+      els.forEach(function(e){e.classList.add('in')});return;
+    }
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e)});
+    requestAnimationFrame(function(){var vh=window.innerHeight||800;els.forEach(function(e){if(e.getBoundingClientRect().top<vh*0.92){e.classList.add('in');io.unobserve(e)}})});
+    setTimeout(function(){els.forEach(function(e){if(!e.classList.contains('in'))e.classList.add('in')})},1600);
+  })();
+</script>
 </body>
 </html>
