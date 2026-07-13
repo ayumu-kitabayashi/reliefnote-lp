@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ReliefNote｜親の大切な情報を1か所に。もしもの時、家族が困らない。</title>
-<meta name="description" content="口座・保険・契約・連絡先——親の大切な情報を今のうちに1か所へ。入院・介護・相続、万一のときに必要な手続きまでご案内し、家族がお金と手続きで困らないようにするアプリ、ReliefNote。無料。">
+<title>リリーフノート｜親の大切な情報を1か所に。もしもの時、家族が困らない。</title>
+<meta name="description" content="口座・保険・契約・連絡先——親の大切な情報を今のうちに1か所へ。入院・介護・相続、万一のときに必要な手続きまでご案内し、家族がお金と手続きで困らないようにするアプリ、リリーフノート。無料。">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://reliefnote.jp/">
-<meta property="og:title" content="ReliefNote｜親の大切な情報を1か所に。もしもの時、家族が困らない。">
+<meta property="og:title" content="リリーフノート｜親の大切な情報を1か所に。もしもの時、家族が困らない。">
 <meta property="og:description" content="口座・保険・契約・連絡先を今のうちに1か所へ。もしもの時に必要な手続きまでご案内し、家族がお金と手続きで困らないようにします。">
 <meta property="og:url" content="https://reliefnote.jp/">
 <meta property="og:image" content="https://reliefnote.jp/images/logo-header.png">
@@ -16,15 +16,16 @@
 <link rel="apple-touch-icon" href="images/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1E211B; --ink-2:#5F6459; --ink-3:#9A9E94;
+  --ink:#3A3E31; --ink-2:#5F6459; --ink-3:#9A9E94;   /* ブランドの olive インク */
   --bg:#FFFFFF; --bg-2:#F6F7F4; --card:#FFFFFF;
   --line:#EAEBE6; --line-2:#E0E1DB;
-  --g1:#3E8F87; --g2:#6E8FD6;            /* グラデ差し色（teal→periwinkle）。要点1語に使用・変更容易 */
+  --g1:#4F5A35; --g2:#A9853F;            /* グラデ差し色＝ブランドの温色（olive→antique gold）。要点1語に使用 */
   --grad:linear-gradient(96deg,var(--g1),var(--g2));
   --sans:'Noto Sans JP',system-ui,-apple-system,sans-serif;
+  --serif:'Noto Serif JP',serif;         /* 見出し・ブランドの明朝 */
   --wrap:1120px;
   --sh-sm:0 1px 2px rgba(30,33,27,.05), 0 8px 24px -12px rgba(30,33,27,.10);
   --sh:0 30px 60px -24px rgba(30,33,27,.18);
@@ -36,7 +37,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-wrap:anywhere}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-h1,h2,h3,h4{font-weight:900;line-height:1.32;letter-spacing:-.01em;line-break:strict;text-wrap:balance}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.42;letter-spacing:.005em;line-break:strict;text-wrap:balance}
 p{line-break:strict}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -75,7 +76,10 @@ section{padding:72px 0}
 /* header */
 header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.78);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{height:32px;width:auto}
+.logo{height:26px;width:auto}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{height:36px;width:36px;flex:none}
+.brand-word{height:21px;width:auto}
 nav{display:flex;align-items:center;gap:4px}
 nav a.link{padding:8px 14px;font-size:14px;color:var(--ink-2);font-weight:500;border-radius:8px}
 nav a.link:hover{color:var(--ink);background:var(--bg-2)}
@@ -171,7 +175,9 @@ details .a{padding:0 0 20px;font-size:14.5px;color:var(--ink-2);font-weight:500}
 /* footer */
 footer{padding:60px 0 76px;color:var(--ink-2);font-size:14px}
 footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;border-top:1px solid var(--line);padding-top:40px}
-.foot-brand img{height:38px}
+.foot-brand{display:flex;align-items:center;gap:12px}
+.foot-brand img{height:26px;width:auto}
+.foot-brand .foot-mark{height:42px;width:42px;flex:none}
 footer .fcol a{display:block;color:var(--ink-2);padding:5px 0;font-size:14px;font-weight:500}
 footer .fcol a:hover{color:var(--ink)}
 .fineprint{margin-top:32px;font-size:12px;color:var(--ink-3);line-height:1.75}
@@ -181,7 +187,7 @@ footer .fcol a:hover{color:var(--ink)}
 
 <header>
   <div class="wrap">
-    <a href="#top"><img class="logo" src="images/logo-header.png" alt="ReliefNote"></a>
+    <a href="#top" class="brand"><img class="brand-mark" src="images/logo-icon.png" alt=""><img class="brand-word" src="images/logo-jp.png" alt="リリーフノート"></a>
     <nav>
       <a class="link" href="#why">なぜ必要か</a>
       <a class="link" href="#how">できること</a>
@@ -199,7 +205,7 @@ footer .fcol a:hover{color:var(--ink)}
       <p class="eyebrow">家族の重要情報マネージャ</p>
       <h1>親にもしもがあっても<br>家族がお金と手続きで<br><span class="grad">困らない</span></h1>
       <p class="lead">
-        口座・保険・契約・連絡先を、今のうちに1か所へ。もしもの手続きまで、ReliefNote が案内します。
+        口座・保険・契約・連絡先を、今のうちに1か所へ。もしもの手続きまで、リリーフノート が案内します。
       </p>
       <div class="cta">
         <a class="appbtn" href="#"><svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.42 2.2-1.13 3.02-.85.98-2.23 1.74-3.38 1.65-.14-1.11.42-2.29 1.09-3.03.79-.9 2.2-1.58 3.42-1.64zM20.5 17.2c-.6 1.35-.9 1.95-1.66 3.14-1.07 1.66-2.58 3.72-4.45 3.74-1.66.02-2.09-1.08-4.35-1.06-2.26.01-2.73 1.08-4.39 1.06-1.87-.02-3.3-1.88-4.37-3.53-3-4.63-3.31-10.06-1.46-12.95 1.31-2.05 3.38-3.25 5.33-3.25 1.98 0 3.23 1.09 4.87 1.09 1.59 0 2.56-1.09 4.85-1.09 1.73 0 3.57.94 4.88 2.57-4.29 2.35-3.59 8.47.6 10.28z"/></svg><span class="t"><small>無料でダウンロード</small><b>App Store</b></span></a>
@@ -208,7 +214,7 @@ footer .fcol a:hover{color:var(--ink)}
       <div class="trust"><span>ずっと無料</span><span>iPhone対応</span><span>登録不要</span><span>家族で共有</span></div>
     </div>
     <div class="stage" data-anim>
-      <div class="phone"><img src="images/shot-note.png" alt="ReliefNote 家族情報ノートの画面"></div>
+      <div class="phone"><img src="images/shot-note.png" alt="リリーフノート 家族情報ノートの画面"></div>
     </div>
   </div>
 </section>
@@ -262,7 +268,7 @@ footer .fcol a:hover{color:var(--ink)}
   <div class="wrap">
     <div class="show" data-anim>
       <div class="txt">
-        <div class="label">03 ─ つながる ／ ReliefNote ならでは</div>
+        <div class="label">03 ─ つながる ／ リリーフノート ならでは</div>
         <h3>生前の「記録」が<br>もしもの「手続き」を<span class="grad">助ける</span></h3>
         <p>記録した情報が、手続きの画面にそのまま現れます。</p>
         <div class="mini">
@@ -324,7 +330,7 @@ footer .fcol a:hover{color:var(--ink)}
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div class="foot-brand"><img src="images/logo-header.png" alt="ReliefNote"></div>
+      <div class="foot-brand"><img class="foot-mark" src="images/logo-icon.png" alt=""><img src="images/logo-jp.png" alt="リリーフノート"></div>
       <div class="fcol">
         <a href="#how">できること</a>
         <a href="#price">料金</a>
