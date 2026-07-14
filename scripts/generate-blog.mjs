@@ -152,8 +152,7 @@ async function main() {
   }
   fs.writeFileSync(path.join(BLOG, 'backlog.json'), JSON.stringify(backlog, null, 2));
   if (fs.existsSync(seedsFile)) fs.writeFileSync(seedsFile, JSON.stringify(seeds, null, 2));
-  const nUrls = regenSitemap();
-  console.log(`\n公開確定 ${written.length}本 / sitemap ${nUrls}URL`);
+  console.log(`\n公開確定 ${written.length}本（sitemap/ハブ/IndexNowは build-static.mjs が担当）`);
   written.forEach((e) => console.log(`  - ${e.slug}: ${e.title}`));
 }
 

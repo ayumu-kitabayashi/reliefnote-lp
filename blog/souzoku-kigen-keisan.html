@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相続手続きの期限計算機｜逝去日から自動計算（死亡届・相続放棄・相続税）｜リリーフノート</title>
+<meta name="description" content="逝去日を入力するだけで、死亡届（7日）・世帯主変更（14日）・相続放棄（3か月）・準確定申告（4か月）・相続税（10か月）など、期限のある手続きの締め切り日と残り日数を自動計算します。無料。">
+<link rel="canonical" href="https://reliefnote.jp/blog/souzoku-kigen-keisan.html">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="相続手続きの期限計算機｜逝去日から自動計算">
+<meta property="og:description" content="逝去日を入れるだけで、死亡届・相続放棄・準確定申告・相続税などの期限日と残り日数を自動計算。無料。">
+<meta property="og:url" content="https://reliefnote.jp/blog/souzoku-kigen-keisan.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://reliefnote.jp/images/logo-header.png">
+<link rel="icon" href="../images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<style>
+  .calc { background:#fff; border:1px solid #e7e2d6; border-left:3px solid #A9853F; border-radius:12px; padding:20px; margin:18px 0; }
+  .calc label { display:block; font-weight:700; margin-bottom:8px; }
+  .calc input[type=date] { font-size:16px; padding:10px 12px; border:1px solid #ccc4b2; border-radius:8px; width:100%; max-width:260px; font-family:inherit; }
+  .calc button { margin-top:12px; background:#3A3E31; color:#fff; border:0; border-radius:8px; padding:12px 22px; font-size:15px; font-weight:700; cursor:pointer; }
+  .calc button:active { opacity:.85; }
+  .res-table { width:100%; border-collapse:collapse; margin-top:6px; }
+  .res-table th, .res-table td { border-bottom:1px solid #eee6d6; padding:10px 8px; text-align:left; font-size:14px; vertical-align:top; }
+  .res-table th { color:#6b6350; font-weight:700; white-space:nowrap; }
+  .res-date { font-weight:800; color:#3A3E31; white-space:nowrap; }
+  .res-left { color:#A9853F; font-weight:700; white-space:nowrap; }
+  .res-over { color:#b0492f; font-weight:700; }
+  .res-note { color:#8a8272; font-size:12.5px; }
+  .muted { color:#8a8272; }
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"相続手続きの期限計算機｜逝去日から自動計算",
+  "description":"逝去日を入力すると、死亡届・世帯主変更・相続放棄・準確定申告・相続税など期限のある手続きの締め切り日と残り日数を自動計算します。",
+  "image":"https://reliefnote.jp/images/logo-header.png",
+  "datePublished":"2026-07-14",
+  "dateModified":"2026-07-14",
+  "author":{"@type":"Person","name":"北林 歩","jobTitle":"ReliefNote 創業者"},
+  "publisher":{"@type":"Organization","name":"ReliefNote","logo":{"@type":"ImageObject","url":"https://reliefnote.jp/images/logo-header.png"}},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://reliefnote.jp/blog/souzoku-kigen-keisan.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"ホーム","item":"https://reliefnote.jp/"},
+    {"@type":"ListItem","position":2,"name":"ブログ","item":"https://reliefnote.jp/blog/"},
+    {"@type":"ListItem","position":3,"name":"相続手続きの期限計算機","item":"https://reliefnote.jp/blog/souzoku-kigen-keisan.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"相続手続きの期限は何を基準に数えますか？","acceptedAnswer":{"@type":"Answer","text":"死亡届は死亡の事実を知った日から7日以内です。相続放棄（3か月）・準確定申告（4か月）・相続税（10か月）は「相続の開始があったことを知った日」から数えるのが原則です。多くの場合は逝去日が起点になりますが、事情により異なるため、正確な期限は各窓口や専門家にご確認ください。"}},
+    {"@type":"Question","name":"相続放棄の期限を過ぎるとどうなりますか？","acceptedAnswer":{"@type":"Answer","text":"相続放棄・限定承認は原則3か月以内で、正当な理由なく過ぎると原則として単純承認（借金も含めて相続）したものと扱われます。財産・負債の全体像が分からないときほど、早めに家庭裁判所や専門家へ相談してください。"}},
+    {"@type":"Question","name":"相続税は必ず申告が必要ですか？","acceptedAnswer":{"@type":"Answer","text":"遺産の総額が基礎控除（3000万円＋600万円×法定相続人の数）以下なら、原則として申告は不要です。基礎控除を超える場合は、相続の開始を知った日の翌日から10か月以内に申告・納付します。"}},
+    {"@type":"Question","name":"この計算結果はそのまま使えますか？","acceptedAnswer":{"@type":"Answer","text":"目安としてご利用ください。起算日の考え方（知った日）や休日の扱い、個別事情により実際の期限は前後します。重要な手続きは、必ず各機関の案内や専門家に確認してください。"}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="../"><img class="logo" src="../images/logo-jp.png" alt="リリーフノート"></a>
+    <nav>
+      <a href="./">ブログ</a>
+      <a href="../#how">できること</a>
+      <a href="../#price">料金</a>
+      <a class="cta" href="../#start">無料で始める</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb"><a href="../">ホーム</a> ／ <a href="./">ブログ</a> ／ 相続手続きの期限計算機</nav>
+
+  <span class="tag">便利ツール</span>
+  <h1>相続手続きの期限計算機</h1>
+  <div class="pubmeta">
+    <span>2026年7月14日</span><span>監修：ReliefNote 創業者 北林 歩</span><span>入力1分</span>
+  </div>
+
+  <div class="answer">
+    <div class="lbl">このツールでできること</div>
+    <p><strong>逝去日を入力するだけ</strong>で、<strong>死亡届（7日）・世帯主変更（14日）・相続放棄（3か月）・準確定申告（4か月）・相続税（10か月）</strong>など、期限のある手続きの<strong>締め切り日</strong>と<strong>残り日数</strong>を自動で計算します。何から急げばいいかが一目で分かります。</p>
+  </div>
+
+  <div class="calc">
+    <label for="dod">逝去日（相続の開始を知った日）</label>
+    <input type="date" id="dod">
+    <div><button id="calcBtn" type="button">期限を計算する</button></div>
+    <div id="result" style="margin-top:16px"></div>
+  </div>
+
+  <div class="toc">
+    <b>この記事の内容</b>
+    <ol>
+      <li><a href="#list">期限のある主な手続き</a></li>
+      <li><a href="#note">起算日と注意点</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </div>
+
+  <h2 id="list">期限のある主な手続き</h2>
+  <table class="deadline-table">
+    <thead><tr><th>手続き</th><th>期限の目安</th><th>主な窓口</th></tr></thead>
+    <tbody>
+      <tr><td>死亡届</td><td>7日以内</td><td>市区町村役場</td></tr>
+      <tr><td>世帯主変更・健康保険の資格喪失</td><td>14日以内</td><td>市区町村役場ほか</td></tr>
+      <tr><td>相続放棄・限定承認</td><td>3か月以内</td><td>家庭裁判所</td></tr>
+      <tr><td>準確定申告</td><td>4か月以内</td><td>税務署</td></tr>
+      <tr><td>相続税の申告・納付</td><td>10か月以内</td><td>税務署</td></tr>
+      <tr><td>相続登記（不動産）</td><td>取得を知った日から3年以内</td><td>法務局</td></tr>
+    </tbody>
+  </table>
+  <p>相続登記は2024年4月から義務化されました。詳しくは<a href="souzoku-touki-gimuka.html">相続登記の義務化</a>を、全体像は<a href="souzoku-kigen-ichiran.html">相続手続きの期限一覧</a>もあわせてご覧ください。</p>
+
+  <h2 id="note">起算日と注意点</h2>
+  <ul>
+    <li><strong>起算日</strong> — 相続放棄・準確定申告・相続税は「相続の開始があったことを<strong>知った日</strong>」から数えるのが原則です。多くは逝去日が起点ですが、事情により異なります。</li>
+    <li><strong>相続税の要否</strong> — 遺産が<strong>基礎控除（3000万円＋600万円×法定相続人の数）</strong>以下なら、原則申告不要です。</li>
+    <li><strong>準確定申告</strong> — 故人に一定の所得があった場合などに必要です。</li>
+    <li><strong>休日の扱い</strong> — 期限が土日祝にあたる場合など、実際の締め切りは前後することがあります。</li>
+  </ul>
+  <div class="callout">この計算はあくまで<strong>目安</strong>です。正確な期限・要否は、お住まいの自治体・税務署・家庭裁判所や、司法書士・税理士などの専門家に必ずご確認ください。</div>
+
+  <div class="appcta">
+    <div class="in">
+      <h3>期限も、やることも、あなたの状況に合わせて</h3>
+      <p>ReliefNote は、逝去日やご事情から<strong>あなたに必要な手続きだけ</strong>を絞り込み、期限・持ち物・窓口まで順番に案内します。生前に記録した情報は、手続きの場面でそのまま使えます。無料。</p>
+      <a class="btn" href="../#start">ReliefNote を無料で使ってみる</a>
+    </div>
+  </div>
+
+  <h2 id="faq">よくある質問</h2>
+  <div class="faq-q">相続手続きの期限は何を基準に数える？</div>
+  <p class="faq-a">死亡届は死亡を知った日から7日以内。相続放棄（3か月）・準確定申告（4か月）・相続税（10か月）は「相続の開始を知った日」から数えるのが原則です。多くは逝去日が起点ですが、事情により異なるため各窓口や専門家に確認を。</p>
+  <div class="faq-q">相続放棄の期限を過ぎるとどうなる？</div>
+  <p class="faq-a">原則3か月以内で、正当な理由なく過ぎると単純承認（借金も含めて相続）とみなされることがあります。迷えば早めに家庭裁判所や専門家へ。</p>
+  <div class="faq-q">相続税は必ず申告が必要？</div>
+  <p class="faq-a">遺産が基礎控除（3000万円＋600万円×法定相続人）以下なら原則不要。超える場合は知った日の翌日から10か月以内に申告・納付します。</p>
+  <div class="faq-q">この計算結果はそのまま使える？</div>
+  <p class="faq-a">目安としてご利用ください。起算日や休日の扱い、個別事情で実際の期限は前後します。重要な手続きは各機関・専門家に確認を。</p>
+
+  <div class="author">
+    <img src="../images/logo-mark.png" alt="リリーフノート">
+    <div>
+      <b>北林 歩</b>
+      <span>ReliefNote 創業者。家族の重要情報マネージャ「ReliefNote」を開発。</span>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a href="../"><img class="logo" src="../images/logo-jp.png" alt="リリーフノート" style="height:28px"></a></div>
+      <div>
+        <a href="./">ブログ</a>
+        <a href="../#how">できること</a>
+        <a href="../#price">料金</a>
+      </div>
+    </div>
+    <p class="fineprint">
+      ReliefNote（リリーフノート）／ 創業者 北林 歩<br>
+      本ツールは一般的な情報提供を目的とした目安の計算です。起算日・期限・要否は制度改正やご事情により異なります。実際の手続きは、お住まいの自治体・税務署・家庭裁判所や各機関の最新の案内、司法書士・税理士等の専門家に必ずご確認ください。ReliefNote は手続きのご案内をするものであり、法務・税務・医療上の助言を提供するものではありません。<br>
+      &copy; ReliefNote
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = [
+    {name:'死亡届の提出', unit:'d', n:7, dest:'市区町村役場'},
+    {name:'世帯主変更・健康保険の資格喪失', unit:'d', n:14, dest:'市区町村役場ほか'},
+    {name:'相続放棄・限定承認', unit:'m', n:3, dest:'家庭裁判所', note:'「知った日」起算'},
+    {name:'準確定申告', unit:'m', n:4, dest:'税務署', note:'必要な場合'},
+    {name:'相続税の申告・納付', unit:'m', n:10, dest:'税務署', note:'基礎控除を超える場合'}
+  ];
+  function addDays(d,n){ var x=new Date(d.getTime()); x.setDate(x.getDate()+n); return x; }
+  function addMonths(d,n){ var x=new Date(d.getTime()); var day=x.getDate(); x.setMonth(x.getMonth()+n); if(x.getDate()<day){ x.setDate(0); } return x; }
+  function fmt(d){ return d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日'; }
+  function calc(){
+    var v=document.getElementById('dod').value;
+    var out=document.getElementById('result');
+    if(!v){ out.innerHTML='<p class="muted">逝去日を選んでください。</p>'; return; }
+    var dod=new Date(v+'T00:00:00');
+    var today=new Date(); today.setHours(0,0,0,0);
+    var rows='<table class="res-table"><thead><tr><th>手続き</th><th>期限日</th><th>残り</th></tr></thead><tbody>';
+    items.forEach(function(it){
+      var due = it.unit==='d' ? addDays(dod,it.n) : addMonths(dod,it.n);
+      var diff = Math.round((due-today)/86400000);
+      var left = diff<0 ? '<span class="res-over">'+(-diff)+'日超過</span>' : (diff===0?'<span class="res-left">本日</span>':'<span class="res-left">あと'+diff+'日</span>');
+      rows+='<tr><td>'+it.name+'<div class="res-note">'+it.dest+(it.note?'・'+it.note:'')+'</div></td><td class="res-date">'+fmt(due)+'</td><td>'+left+'</td></tr>';
+    });
+    rows+='<tr><td>相続登記（不動産）<div class="res-note">法務局・取得を知った日から</div></td><td class="res-date">3年以内</td><td class="res-left">—</td></tr>';
+    rows+='</tbody></table><p class="res-note" style="margin-top:8px">※ 目安です。起算日・休日・個別事情で前後します。各機関・専門家にご確認ください。</p>';
+    out.innerHTML=rows;
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+})();
+</script>
+
+</body>
+</html>
