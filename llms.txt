@@ -1,0 +1,57 @@
+# ReliefNote（リリーフノート）
+> 親の"もしも"に、子が迷わないための家族情報・手続き伴走ガイド。生前の備え（家族情報ノート）と、没後の手続き（相続・年金・役所・保険など）を、子・孫世代にわかりやすく解説します。各記事は結論を先に、期限・必要書類・窓口つきで整理しています。監修：ReliefNote 創業者 北林 歩。
+
+## 便利ツール
+- [相続手続きの期限計算機](https://reliefnote.jp/blog/souzoku-kigen-keisan.html): 逝去日を入れると死亡届・相続放棄・準確定申告・相続税などの期限を自動計算
+
+## 手続きの基本
+- [世帯主変更届は必要？14日以内の手続きと必要なもの](https://reliefnote.jp/blog/setainushi-henkou.html): 世帯主が亡くなったら世帯主変更届は必要？
+- [火葬許可証・埋葬許可証とは？受け取りと使い方](https://reliefnote.jp/blog/kasou-kyokashou.html): 火葬許可証と埋葬許可証はどう違う？
+- [死亡届の書き方・提出期限・届出人になれる人](https://reliefnote.jp/blog/shibou-todoke-kakikata.html): 死亡届はどう書いて、いつまでに出す？
+- [親が亡くなったら、まず何をする？やることリストと順番【保存版】](https://reliefnote.jp/blog/oya-ga-nakunattara-yarukoto.html): 親が亡くなったら、まず何をすればいい？
+
+## お金・財産
+- [葬祭費・埋葬料はいくら？申請方法と必要書類](https://reliefnote.jp/blog/sousaihi-maisouryou.html): 葬祭費や埋葬料はもらえる？いくら？
+- [生命保険金の請求手続きと必要書類【死亡保険金】](https://reliefnote.jp/blog/seimei-hoken-seikyu.html): 死亡保険金はどう請求する？必要書類は？
+- [未支給年金とは？請求できる人と手続き方法](https://reliefnote.jp/blog/mishikyuu-nenkin.html): 未支給年金は誰が請求できる？
+- [高額療養費は死亡後でも請求できる？払い戻しの手続き](https://reliefnote.jp/blog/kokan-ryoyohi.html): 亡くなった親の高額療養費は請求できる？
+- [遺族年金はいくらもらえる？条件と手続きをわかりやすく](https://reliefnote.jp/blog/izoku-nenkin.html): 遺族年金はいくら？もらえる条件は？
+- [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
+
+## 相続
+- [法定相続人とは？範囲・順位・法定相続分をやさしく](https://reliefnote.jp/blog/houtei-souzokunin.html): 法定相続人は誰？相続の割合は？
+- [相続した実家（空き家）はどうする？売却・活用・解体の選び方](https://reliefnote.jp/blog/souzoku-akiya.html): 相続した実家（空き家）はどうすればいい？
+- [遺産分割協議書とは？作り方と必要になる場面](https://reliefnote.jp/blog/isanbunkatsu-kyougisho.html): 遺産分割協議書はどう作る？
+- [相続放棄のやり方と注意点｜3か月を過ぎたらどうなる？](https://reliefnote.jp/blog/souzoku-houki.html): 相続放棄はどうやる？期限は？
+- [相続登記の義務化とは？不動産の名義変更の進め方](https://reliefnote.jp/blog/souzoku-touki-gimuka.html): 相続登記は義務？いつまでにやる？
+- [遺言書が見つかったら？種類別の扱いと検認の手続き](https://reliefnote.jp/blog/igonsho-kenin.html): 遺言書が見つかったらどうする？
+- [相続税は誰にかかる？基礎控除の計算をやさしく](https://reliefnote.jp/blog/souzokuzei-kiso-koujo.html): 相続税は誰にかかる？いくらから？
+- [準確定申告とは？4か月以内に必要なケースと手続き](https://reliefnote.jp/blog/junkakutei-shinkoku.html): 準確定申告は必要？いつまで？
+- [相続手続きの期限一覧｜3か月・4か月・10か月の落とし穴](https://reliefnote.jp/blog/souzoku-kigen-ichiran.html): 相続手続きの期限はいつまで？
+
+## 契約・解約
+- [公共料金（電気・ガス・水道）の名義変更・解約手順](https://reliefnote.jp/blog/koukyou-ryoukin-meigi.html): 故人名義の公共料金はどう手続きする？
+- [故人の携帯電話は解約？承継？手続きの選び方](https://reliefnote.jp/blog/keitai-kaiyaku-shoukei.html): 亡くなった親の携帯はどうすればいい？
+- [故人のNHK受信契約を解約する手順](https://reliefnote.jp/blog/nhk-kaiyaku.html): 亡くなった親のNHK契約はどう解約する？
+- [故人のクレジットカードの解約手順と注意点](https://reliefnote.jp/blog/credit-card-kaiyaku.html): 亡くなった親のクレジットカードはどうする？
+- [故人が借りていた賃貸住宅の解約・原状回復の進め方](https://reliefnote.jp/blog/chintai-kaiyaku.html): 亡くなった親の賃貸はどう解約する？
+
+## デジタル遺品
+- [親のスマホのロックが解除できない時の対処法](https://reliefnote.jp/blog/sumaho-lock-kaijo.html): 故人のスマホのロックが解けない時はどうする？
+- [暗号資産・ネット証券は相続できる？探し方と手続き](https://reliefnote.jp/blog/angou-shisan-souzoku.html): 故人の暗号資産やネット証券はどうなる？
+- [デジタル遺品とは？スマホ・サブスク・SNSの解約手順](https://reliefnote.jp/blog/digital-ihin.html): デジタル遺品はどう処理すればいい？
+
+## 生前の備え
+- [生前整理は何から始める？無理なく進める順番](https://reliefnote.jp/blog/seizen-seiri-hajimekata.html): 生前整理は何から始めればいい？
+- [親と「もしも」の話をどう切り出す？角が立たない伝え方](https://reliefnote.jp/blog/oya-to-mosimo-no-hanashi.html): 親と終活の話をどう切り出せばいい？
+- [家族信託とは？認知症に備える仕組みをわかりやすく](https://reliefnote.jp/blog/kazoku-shintaku.html): 家族信託とは何？どんな時に使う？
+- [エンディングノートに何を書く？家族が本当に助かる項目リスト](https://reliefnote.jp/blog/ending-note-kakikata.html): エンディングノートには何を書けばいい？
+
+## 介護・入院
+- [介護保険の申請方法と認定までの流れ](https://reliefnote.jp/blog/kaigo-hoken-shinsei.html): 介護保険はどう申請する？流れは？
+- [離れて暮らす親の見守り、家族にできること](https://reliefnote.jp/blog/anshin-mimamori.html): 離れて暮らす高齢の親をどう見守る？
+- [親の入院・介護が始まったら？家族が最初に確認すること](https://reliefnote.jp/blog/nyuin-kaigo-hajimari.html): 親の入院や介護が始まったら何を確認する？
+
+## こころ
+- [大切な人を亡くしたあとの気持ちとの向き合い方](https://reliefnote.jp/blog/grief-care.html): 家族を亡くした悲しみとどう向き合う？
+

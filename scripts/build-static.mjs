@@ -143,6 +143,56 @@ function regenSitemap(hubUrls) {
   return urls.length;
 }
 
+function rfc822(iso) {
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const mons = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const [y, m, d] = (iso || DATE_ISO).split('-').map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return `${days[dt.getUTCDay()]}, ${String(d).padStart(2, '0')} ${mons[m - 1]} ${y} 00:00:00 +0900`;
+}
+
+// RSS 2.0 フィード（アグリゲータ・一部AIクローラの発見経路）
+function generateFeed() {
+  const items = published.slice().sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 30);
+  const xmlItems = items.map((p) => `    <item>
+      <title>${esc(p.title)}</title>
+      <link>${BASE}/blog/${p.slug}.html</link>
+      <guid isPermaLink="true">${BASE}/blog/${p.slug}.html</guid>
+      <description>${esc(p.q || p.title)}</description>
+      <pubDate>${rfc822(p.date)}</pubDate>
+    </item>`).join('\n');
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>ReliefNote ブログ｜終活・相続・もしもの手続きガイド</title>
+    <link>${BASE}/blog/</link>
+    <description>親の終活・相続・亡くなったあとの手続きを、子・孫世代にわかりやすく。</description>
+    <language>ja</language>
+    <lastBuildDate>${rfc822(DATE_ISO)}</lastBuildDate>
+${xmlItems}
+  </channel>
+</rss>
+`;
+  fs.writeFileSync(path.join(BLOG, 'feed.xml'), feed);
+}
+
+// llms.txt（AI/LLM向けのサイト案内・新興標準）
+function generateLlms() {
+  const byCat = {};
+  for (const p of published) { (byCat[p.category] ||= []).push(p); }
+  let out = `# ReliefNote（リリーフノート）\n`;
+  out += `> 親の"もしも"に、子が迷わないための家族情報・手続き伴走ガイド。生前の備え（家族情報ノート）と、没後の手続き（相続・年金・役所・保険など）を、子・孫世代にわかりやすく解説します。各記事は結論を先に、期限・必要書類・窓口つきで整理しています。監修：ReliefNote 創業者 北林 歩。\n\n`;
+  out += `## 便利ツール\n- [相続手続きの期限計算機](${BASE}/blog/souzoku-kigen-keisan.html): 逝去日を入れると死亡届・相続放棄・準確定申告・相続税などの期限を自動計算\n\n`;
+  for (const [catName, meta] of Object.entries(CAT)) {
+    const posts = (byCat[catName] || []).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    if (!posts.length) continue;
+    out += `## ${catName}\n`;
+    for (const p of posts) out += `- [${p.title}](${BASE}/blog/${p.slug}.html): ${p.q || ''}\n`;
+    out += `\n`;
+  }
+  fs.writeFileSync(path.join(ROOT, 'llms.txt'), out);
+}
+
 async function pingIndexNow(urls) {
   if (!urls.length) return;
   if (!process.env.CI) { console.log('IndexNow: ローカル実行のためスキップ（本番=CIでのみ送信）'); return; }
@@ -157,6 +207,8 @@ async function pingIndexNow(urls) {
 
 const hubUrls = buildHubs();
 const nUrls = regenSitemap(hubUrls);
+generateFeed();
+generateLlms();
 // 当日公開された記事＋ハブ＋計算機を IndexNow へ
 const todayArticles = published.filter((p) => p.date === DATE_ISO).map((p) => `${BASE}/blog/${p.slug}.html`);
 const pingList = [...new Set([...todayArticles, ...hubUrls, `${BASE}/blog/souzoku-kigen-keisan.html`])];
