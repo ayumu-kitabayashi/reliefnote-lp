@@ -5,6 +5,7 @@
 - [相続手続きの期限計算機](https://reliefnote.jp/blog/souzoku-kigen-keisan.html): 逝去日を入れると死亡届・相続放棄・準確定申告・相続税などの期限を自動計算
 
 ## 手続きの基本
+- [納骨はいつ・どうする？お墓と改葬の基礎](https://reliefnote.jp/blog/ohaka-noukotsu.html): 納骨はいつまでにどうすればいい？
 - [世帯主変更届は必要？14日以内の手続きと必要なもの](https://reliefnote.jp/blog/setainushi-henkou.html): 世帯主が亡くなったら世帯主変更届は必要？
 - [火葬許可証・埋葬許可証とは？受け取りと使い方](https://reliefnote.jp/blog/kasou-kyokashou.html): 火葬許可証と埋葬許可証はどう違う？
 - [死亡届の書き方・提出期限・届出人になれる人](https://reliefnote.jp/blog/shibou-todoke-kakikata.html): 死亡届はどう書いて、いつまでに出す？
@@ -20,6 +21,7 @@
 - [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
 
 ## 相続
+- [遺留分とは？もらえる人と割合をやさしく](https://reliefnote.jp/blog/iryuubun.html): 遺留分は誰にどれくらい認められる？
 - [法定相続人とは？範囲・順位・法定相続分をやさしく](https://reliefnote.jp/blog/houtei-souzokunin.html): 法定相続人は誰？相続の割合は？
 - [相続した実家（空き家）はどうする？売却・活用・解体の選び方](https://reliefnote.jp/blog/souzoku-akiya.html): 相続した実家（空き家）はどうすればいい？
 - [遺産分割協議書とは？作り方と必要になる場面](https://reliefnote.jp/blog/isanbunkatsu-kyougisho.html): 遺産分割協議書はどう作る？
