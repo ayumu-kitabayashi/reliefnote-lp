@@ -21,6 +21,7 @@
 - [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
 
 ## 相続
+- [生前贈与とは？相続対策としての基本と注意点](https://reliefnote.jp/blog/seizen-zoyo.html): 生前贈与は相続対策になる？
 - [遺留分とは？もらえる人と割合をやさしく](https://reliefnote.jp/blog/iryuubun.html): 遺留分は誰にどれくらい認められる？
 - [法定相続人とは？範囲・順位・法定相続分をやさしく](https://reliefnote.jp/blog/houtei-souzokunin.html): 法定相続人は誰？相続の割合は？
 - [相続した実家（空き家）はどうする？売却・活用・解体の選び方](https://reliefnote.jp/blog/souzoku-akiya.html): 相続した実家（空き家）はどうすればいい？
@@ -47,6 +48,7 @@
 - [デジタル遺品とは？スマホ・サブスク・SNSの解約手順](https://reliefnote.jp/blog/digital-ihin.html): デジタル遺品はどう処理すればいい？
 
 ## 生前の備え
+- [おひとりさまの終活、何から始める？](https://reliefnote.jp/blog/ohitorisama-shukatsu.html): おひとりさまの終活は何をすればいい？
 - [成年後見制度とは？認知症に備える基礎知識](https://reliefnote.jp/blog/seinen-kouken.html): 成年後見制度はどんな時に使う？
 - [死後事務委任契約とは？おひとりさまの備え](https://reliefnote.jp/blog/shigo-jimu-inin.html): 死後の手続きを誰に頼める？
 - [生前整理は何から始める？無理なく進める順番](https://reliefnote.jp/blog/seizen-seiri-hajimekata.html): 生前整理は何から始めればいい？
