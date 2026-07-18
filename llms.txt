@@ -5,6 +5,7 @@
 - [相続手続きの期限計算機](https://reliefnote.jp/blog/souzoku-kigen-keisan.html): 逝去日を入れると死亡届・相続放棄・準確定申告・相続税などの期限を自動計算
 
 ## 手続きの基本
+- [香典返しと四十九日、いつ何をする？](https://reliefnote.jp/blog/kouden-gaeshi.html): 香典返しや法要はいつどうする？
 - [納骨はいつ・どうする？お墓と改葬の基礎](https://reliefnote.jp/blog/ohaka-noukotsu.html): 納骨はいつまでにどうすればいい？
 - [世帯主変更届は必要？14日以内の手続きと必要なもの](https://reliefnote.jp/blog/setainushi-henkou.html): 世帯主が亡くなったら世帯主変更届は必要？
 - [火葬許可証・埋葬許可証とは？受け取りと使い方](https://reliefnote.jp/blog/kasou-kyokashou.html): 火葬許可証と埋葬許可証はどう違う？
@@ -12,6 +13,7 @@
 - [親が亡くなったら、まず何をする？やることリストと順番【保存版】](https://reliefnote.jp/blog/oya-ga-nakunattara-yarukoto.html): 親が亡くなったら、まず何をすればいい？
 
 ## お金・財産
+- [年金の受給停止手続きと未支給年金](https://reliefnote.jp/blog/nenkin-juritsu-teishi.html): 故人の年金はどう止める？
 - [株式・投資信託の相続手続きと評価の考え方](https://reliefnote.jp/blog/kabushiki-souzoku.html): 故人の株や投資信託はどう相続する？
 - [葬祭費・埋葬料はいくら？申請方法と必要書類](https://reliefnote.jp/blog/sousaihi-maisouryou.html): 葬祭費や埋葬料はもらえる？いくら？
 - [生命保険金の請求手続きと必要書類【死亡保険金】](https://reliefnote.jp/blog/seimei-hoken-seikyu.html): 死亡保険金はどう請求する？必要書類は？
