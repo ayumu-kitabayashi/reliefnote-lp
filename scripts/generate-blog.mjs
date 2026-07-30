@@ -72,7 +72,7 @@ function buildPrompt(entry) {
     '- 捏造stat禁止（未検証の%・人数・金額を書かない。金額や時効は「自治体・保険者・状況で異なる」等の但し書き、または一般化して書く）。',
     '- 確定した法定事実のみ断定してよい（死亡届7日/相続放棄3か月/準確定4か月/相続税10か月・基礎控除3000万+600万×法定相続人/相続登記2024年4月義務化・3年以内・10万円以下の過料/埋葬料原則5万円/世帯主変更14日 等）。',
     '- 3種のJSON-LD（BlogPosting/BreadcrumbList/FAQPage）必須。FAQPageと本文末FAQ（最低3問）を一致させる。.answer（結論ボックス）で質問に40〜120字で直答。',
-    '- 免責フッター必須。他業界を貶さない。トーンは子・孫世代向けに実利・平易・落ち着いて。',
+    '- 記事末尾に必ず <footer class="fineprint"> を置き、その中に免責文を書く（class名 "fineprint" は必須・省略厳禁）。他業界を貶さない。トーンは子・孫世代向けに実利・平易・落ち着いて。',
     `- 内部リンクを本文に1〜2本（既存slug例: ${linkable}）。CSSは<link rel="stylesheet" href="blog.css">、canonical/OGPは https://reliefnote.jp/blog/${entry.slug}.html。`,
     '',
     '# 参考テンプレHTML（この構造・CSSクラス・JSON-LDの形を踏襲）',
@@ -147,26 +147,47 @@ async function main() {
   const targets = backlog.posts.filter((p) => !p.published).slice(0, N);
   if (targets.length === 0) { console.log('生成対象なし（backlog/seeds/AI提案すべて空）。何もしない。'); return; }
 
+  // ★1本ずつ独立に扱う（1本の検品落ちで全体を止めない）。落ちたら1回だけ再生成し、
+  //   それでもダメなら「その1本だけ」スキップして次へ。通った記事は必ず公開する。
   const written = [];
+  const failed = [];
   for (const entry of targets) {
-    console.log(`生成: ${entry.slug} …`);
-    let html = await anthropic(buildPrompt(entry), 8000);
-    html = html.replace(/^﻿/, '').replace(/^```html\s*/i, '').replace(/```\s*$/i, '').trim();
-    const problems = verify(html, entry);
-    if (problems.length) throw new Error(`検品NG [${entry.slug}]: ${problems.join(' / ')}`);
-    fs.writeFileSync(path.join(BLOG, `${entry.slug}.html`), html + '\n');
-    written.push(entry);
+    let ok = false;
+    for (let attempt = 1; attempt <= 2 && !ok; attempt++) {
+      console.log(`生成: ${entry.slug}${attempt > 1 ? `（再生成${attempt}）` : ''} …`);
+      let html = anthropic(buildPrompt(entry));
+      html = html.replace(/^﻿/, '').replace(/^```html\s*/i, '').replace(/```\s*$/i, '').trim();
+      const problems = verify(html, entry);
+      if (problems.length === 0) {
+        fs.writeFileSync(path.join(BLOG, `${entry.slug}.html`), html + '\n');
+        written.push(entry);
+        ok = true;
+      } else {
+        console.warn(`  検品NG [${entry.slug}] (${attempt}回目): ${problems.join(' / ')}`);
+      }
+    }
+    if (!ok) failed.push(entry);
   }
 
-  // 全合格 → 公開状態を確定
+  // 合格分 → 公開確定
   for (const e of written) {
     const p = backlog.posts.find((x) => x.slug === e.slug);
     p.published = true; p.date = DATE_ISO;
   }
+  // ★検品落ちの記事はバックログ末尾へ回す（毎日同じ"詰まる記事"で止まらないように）
+  for (const e of failed) {
+    const i = backlog.posts.findIndex((x) => x.slug === e.slug);
+    if (i >= 0) backlog.posts.push(backlog.posts.splice(i, 1)[0]);
+  }
   fs.writeFileSync(path.join(BLOG, 'backlog.json'), JSON.stringify(backlog, null, 2));
   if (fs.existsSync(seedsFile)) fs.writeFileSync(seedsFile, JSON.stringify(seeds, null, 2));
-  console.log(`\n公開確定 ${written.length}本（sitemap/ハブ/IndexNowは build-static.mjs が担当）`);
-  written.forEach((e) => console.log(`  - ${e.slug}: ${e.title}`));
+
+  console.log(`\n公開確定 ${written.length}本 / 検品落ち ${failed.length}本（sitemap/ハブ/IndexNowは build-static.mjs が担当）`);
+  written.forEach((e) => console.log(`  ✓ ${e.slug}: ${e.title}`));
+  failed.forEach((e) => console.log(`  ✗ ${e.slug}（今回は見送り・末尾へ回した）`));
+
+  // 1本も公開できなかった時だけ異常終了（commit されない）。1本でも通れば成功＝良い記事は必ず出る。
+  if (written.length === 0) throw new Error('全記事が検品NGで公開なし');
 }
 
 main().catch((e) => { console.error('FAILED:', e.message); process.exit(1); });
