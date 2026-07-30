@@ -4,14 +4,17 @@
 // 1本でも検品不合格なら exit 1（ワークフロー側で commit/push はスキップ＝壊れた記事は公開されない）。
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BLOG = path.join(ROOT, 'blog');
 const N = Math.max(1, Math.min(4, parseInt(process.env.ARTICLES_PER_RUN || '2', 10)));
-const MODEL = process.env.BLOG_MODEL || 'claude-sonnet-4-6';
-const API_KEY = process.env.ANTHROPIC_API_KEY;
-if (!API_KEY) { console.error('ANTHROPIC_API_KEY が未設定です'); process.exit(1); }
+// ★生成は Claude Code のヘッドレス実行（=Maxサブスクを使用・従量課金APIではない）。
+// 認証は CI 側の CLAUDE_CODE_OAUTH_TOKEN（claude setup-token で発行）。⚠ANTHROPIC_API_KEY が
+// 環境にあるとそちらが優先され従量課金に戻るため、ワークフローでは同キーを渡さないこと。
+// BLOG_MODEL で alias（sonnet/opus 等）を上書き可。
+const MODEL = process.env.BLOG_MODEL || 'sonnet';
 
 const readJSON = (p) => JSON.parse(fs.readFileSync(p, 'utf-8'));
 const readText = (p) => fs.readFileSync(p, 'utf-8');
@@ -31,15 +34,25 @@ const seeds = fs.existsSync(seedsFile) ? readJSON(seedsFile) : { seeds: [] };
 const FORBIDDEN = ['株式会社', '会社概要', 'Inc.', '代表取締役'];
 const existingSlugs = new Set(backlog.posts.map((p) => p.slug));
 
-async function anthropic(prompt, maxTokens) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01' },
-    body: JSON.stringify({ model: MODEL, max_tokens: maxTokens, messages: [{ role: 'user', content: prompt }] }),
-  });
-  if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${(await res.text()).slice(0, 400)}`);
-  const data = await res.json();
-  return (data.content || []).map((b) => b.text || '').join('');
+// Claude Code をヘッドレスで1発生成（Maxサブスク認証）。ツール無効・単一ターンで純粋な補完にする。
+// stdin にプロンプトを渡す（引数長の上限回避／stdin上限は10MB）。出力は素のテキスト。
+function anthropic(prompt) {
+  // ツールを全て無効化＋no-toolsのsystem prompt＝エージェント挙動を封じ純粋な補完にする。
+  // （`--allowedTools ""` は空文字ツール名扱いで無効化できないため disallowedTools で明示禁止）
+  const NOTOOLS = 'あなたはテキスト生成器です。ツールは一切使わず、ファイル作成やコマンド実行もせず、成果物を最終メッセージの本文として直接出力してください。';
+  const r = spawnSync('claude', [
+    '-p',
+    '--output-format', 'text',
+    '--model', MODEL,
+    '--disallowedTools', 'Bash', 'Read', 'Edit', 'Write', 'Glob', 'Grep', 'WebFetch', 'WebSearch', 'Task', 'TodoWrite', 'NotebookEdit',
+    '--append-system-prompt', NOTOOLS,
+    '--max-turns', '1',
+  ], { input: prompt, encoding: 'utf-8', maxBuffer: 64 * 1024 * 1024, timeout: 6 * 60 * 1000 });
+  if (r.error) throw new Error(`claude CLI 実行失敗（未インストール?）: ${r.error.message}`);
+  if (r.status !== 0) throw new Error(`claude CLI exit ${r.status}: ${(r.stderr || '').slice(0, 500)}`);
+  const out = (r.stdout || '').trim();
+  if (!out) throw new Error(`claude CLI 空出力: ${(r.stderr || '').slice(0, 300)}`);
+  return out;
 }
 
 function buildPrompt(entry) {

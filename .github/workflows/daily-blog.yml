@@ -30,9 +30,15 @@ jobs:
         with:
           node-version: '20'
 
+      # 記事生成は Claude Code のヘッドレス実行（Maxサブスクを使用）。CLI をCIに導入。
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Generate articles
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # ⚠ ANTHROPIC_API_KEY は渡さない（設定されると従量課金が優先される）。
+          # 認証は Max サブスクの長期トークン（claude setup-token で発行 → Secrets に登録）。
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ARTICLES_PER_RUN: ${{ github.event.inputs.count || '2' }}
         run: node scripts/generate-blog.mjs
 
