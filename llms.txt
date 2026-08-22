@@ -23,6 +23,8 @@
 - [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
 
 ## 相続
+- [特別受益とは?生前贈与や遺贈が相続分に与える影響をわかりやすく解説](https://reliefnote.jp/blog/tokubetsu-jueki.html): 特別受益とは何ですか?
+- [寄与分とは?親の介護や家業への貢献を相続に反映させる方法](https://reliefnote.jp/blog/kiyobun.html): 寄与分とはどんな制度ですか?
 - [相続放棄しても残る「管理義務」とは?2023年民法改正でどう変わったか](https://reliefnote.jp/blog/souzoku-houki-kanrigimu.html): 相続放棄したら実家の管理義務はなくなる?
 - [遺産分割調停とは？流れ・費用・弁護士なしでもできるかを解説](https://reliefnote.jp/blog/isanbunkatsu-chotei.html): 遺産分割調停はどうやって進める？費用はいくらかかる？
 - [相続人がいない場合、親の財産はどうなる？特別縁故者と国庫帰属の仕組み](https://reliefnote.jp/blog/souzokunin-fuzai-tokubetsu-enkosha.html): 親に相続人がいないとき、遺産や財産は最終的にどうなるの？
