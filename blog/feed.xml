@@ -5,7 +5,21 @@
     <link>https://reliefnote.jp/blog/</link>
     <description>親の終活・相続・亡くなったあとの手続きを、子・孫世代にわかりやすく。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>二次相続で相続税が増える理由と対策|一次相続との違いをわかりやすく解説</title>
+      <link>https://reliefnote.jp/blog/souzoku-niji-souzoku-taisaku.html</link>
+      <guid isPermaLink="true">https://reliefnote.jp/blog/souzoku-niji-souzoku-taisaku.html</guid>
+      <description>二次相続とは何ですか?一次相続と何が違いますか?</description>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>相続税の配偶者控除とは|1億6000万円まで非課税になる仕組みと申告の注意点</title>
+      <link>https://reliefnote.jp/blog/souzokuzei-haigusha-koujo.html</link>
+      <guid isPermaLink="true">https://reliefnote.jp/blog/souzokuzei-haigusha-koujo.html</guid>
+      <description>相続税の配偶者控除はいくらまで非課税になりますか?</description>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>親の貸金庫はどう開ける?中身の確認・解約手続きと必要書類まとめ</title>
       <link>https://reliefnote.jp/blog/kashikinko-kaiyaku.html</link>
@@ -201,20 +215,6 @@
       <guid isPermaLink="true">https://reliefnote.jp/blog/nyuinhi-miharai-seisan.html</guid>
       <description>親 死亡 入院費 未払い 誰が払う</description>
       <pubDate>Tue, 01 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>臓器提供・献体の意思表示と登録方法｜家族が知っておくべき死後の手続き</title>
-      <link>https://reliefnote.jp/blog/zouki-teikyo-kentai-tetsuzuki.html</link>
-      <guid isPermaLink="true">https://reliefnote.jp/blog/zouki-teikyo-kentai-tetsuzuki.html</guid>
-      <description>臓器提供や献体をしたい場合、生前にどんな登録や手続きが必要?家族は死後どう対応すればいい?</description>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>Google・Appleアカウントの死後手続き｜家族が引き継ぐ・削除する方法</title>
-      <link>https://reliefnote.jp/blog/cloud-account-shigo-tetsuzuki.html</link>
-      <guid isPermaLink="true">https://reliefnote.jp/blog/cloud-account-shigo-tetsuzuki.html</guid>
-      <description>亡くなった家族のGoogleアカウントやApple IDはどうやって解約・引き継ぎすればいい?</description>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
