@@ -23,6 +23,7 @@
 - [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
 
 ## 相続
+- [相続税申告を税理士に依頼するといくら?費用相場と自分で申告する場合の違い](https://reliefnote.jp/blog/souzokuzei-shinkoku-zeirishi-hiyou.html): 相続税申告を税理士に頼むといくらかかる?自分でできる?
 - [内縁の夫・妻が亡くなったら何をすべき?手続きと相続の注意点](https://reliefnote.jp/blog/naien-partner-shibou-tetsuzuki.html): 内縁の夫や妻が死亡したときの手続きと相続はどうなる?
 - [相続人に認知症の人がいる場合の遺産分割協議はどうする？成年後見制度との関係を解説](https://reliefnote.jp/blog/souzokunin-ninchisho-taiou.html): 相続人が認知症の場合 遺産分割協議 どうする
 - [限定承認とは？相続放棄との違いと手続きの流れ・期限](https://reliefnote.jp/blog/genteishounin-tetsuzuki.html): 限定承認とは
@@ -66,6 +67,7 @@
 - [デジタル遺品とは？スマホ・サブスク・SNSの解約手順](https://reliefnote.jp/blog/digital-ihin.html): デジタル遺品はどう処理すればいい？
 
 ## 生前の備え
+- [認知症になる前に備える口座凍結対策｜代理人カードと家族信託の使い方](https://reliefnote.jp/blog/ninchisho-koza-touketsu-taisaku.html): 親が認知症になったら銀行口座は凍結される?生前にできる対策は?
 - [身元保証サービスの選び方｜一人暮らしの高齢者が入院・施設入所前に備えること](https://reliefnote.jp/blog/mimotohoshou-service-erabikata.html): 身元保証人がいない高齢者は入院や施設入所のときどうすればいい？
 - [任意後見契約の結び方と流れ|親が元気なうちにできる備え](https://reliefnote.jp/blog/nini-kouken-keiyaku.html): 親が認知症になる前に任意後見契約を結んでおいた方がいい?手続きは?
 - [公正証書遺言の作り方とは？費用・必要書類・証人の手配までわかりやすく解説](https://reliefnote.jp/blog/kouseishousho-igon-tsukurikata.html): 公正証書遺言 作り方 費用 必要書類
