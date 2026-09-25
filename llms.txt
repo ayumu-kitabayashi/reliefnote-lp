@@ -23,6 +23,8 @@
 - [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
 
 ## 相続
+- [代襲相続とは？対象範囲と相続分の計算をわかりやすく解説](https://reliefnote.jp/blog/daishu-souzoku.html): 代襲相続とは？孫や甥姪はどこまで対象になりますか？
+- [相続欠格・相続人廃除とは？相続権を失うケースと手続き](https://reliefnote.jp/blog/souzoku-kekkaku-haijo.html): 相続欠格や相続人廃除とはどんな制度で、どんな場合に相続権を失いますか？
 - [相続税申告を税理士に依頼するといくら?費用相場と自分で申告する場合の違い](https://reliefnote.jp/blog/souzokuzei-shinkoku-zeirishi-hiyou.html): 相続税申告を税理士に頼むといくらかかる?自分でできる?
 - [内縁の夫・妻が亡くなったら何をすべき?手続きと相続の注意点](https://reliefnote.jp/blog/naien-partner-shibou-tetsuzuki.html): 内縁の夫や妻が死亡したときの手続きと相続はどうなる?
 - [相続人に認知症の人がいる場合の遺産分割協議はどうする？成年後見制度との関係を解説](https://reliefnote.jp/blog/souzokunin-ninchisho-taiou.html): 相続人が認知症の場合 遺産分割協議 どうする
