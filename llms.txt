@@ -23,6 +23,7 @@
 - [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
 
 ## 相続
+- [相続土地国庫帰属制度とは?いらない土地を手放す手続き・費用・条件を解説](https://reliefnote.jp/blog/souzoku-tochi-kokko-kizoku-seido.html): 相続したけど使わない土地を国に引き取ってもらう制度はある?
 - [代襲相続とは？対象範囲と相続分の計算をわかりやすく解説](https://reliefnote.jp/blog/daishu-souzoku.html): 代襲相続とは？孫や甥姪はどこまで対象になりますか？
 - [相続欠格・相続人廃除とは？相続権を失うケースと手続き](https://reliefnote.jp/blog/souzoku-kekkaku-haijo.html): 相続欠格や相続人廃除とはどんな制度で、どんな場合に相続権を失いますか？
 - [相続税申告を税理士に依頼するといくら?費用相場と自分で申告する場合の違い](https://reliefnote.jp/blog/souzokuzei-shinkoku-zeirishi-hiyou.html): 相続税申告を税理士に頼むといくらかかる?自分でできる?
@@ -87,6 +88,7 @@
 - [エンディングノートに何を書く？家族が本当に助かる項目リスト](https://reliefnote.jp/blog/ending-note-kakikata.html): エンディングノートには何を書けばいい？
 
 ## 介護・入院
+- [介護保険負担限度額認定証とは?申請方法・対象条件・食費居住費軽減をわかりやすく解説](https://reliefnote.jp/blog/kaigo-futan-gendogaku-nintei.html): 親の介護施設の食費・居住費を安くする負担限度額認定証はどう申請すればいい?
 - [介護施設・老人ホームの選び方は？特養と有料老人ホームの違いと入居までの流れ](https://reliefnote.jp/blog/kaigo-shisetsu-erabikata.html): 介護施設 老人ホーム 選び方
 - [在宅看取りとは?準備しておくことと最期を迎えるまでの流れ](https://reliefnote.jp/blog/zaitaku-mitori-junbi.html): 在宅看取り 準備 流れ
 - [入院時に身元保証人がいない場合の対応方法|一人暮らしの親の入院準備](https://reliefnote.jp/blog/nyuin-mimotohoshounin-inai.html): 親が一人暮らしで身元保証人がいないまま入院するときはどうすればいい?
