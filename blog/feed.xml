@@ -5,7 +5,21 @@
     <link>https://reliefnote.jp/blog/</link>
     <description>親の終活・相続・亡くなったあとの手続きを、子・孫世代にわかりやすく。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>初盆(新盆)の準備とやること完全ガイド</title>
+      <link>https://reliefnote.jp/blog/hatsubon-junbi.html</link>
+      <guid isPermaLink="true">https://reliefnote.jp/blog/hatsubon-junbi.html</guid>
+      <description>初盆(新盆)って何をすればいい?準備の流れを知りたい</description>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>親のパソコンのパスワードがわからない時の解除方法</title>
+      <link>https://reliefnote.jp/blog/pc-password-kaijo.html</link>
+      <guid isPermaLink="true">https://reliefnote.jp/blog/pc-password-kaijo.html</guid>
+      <description>親が亡くなった後、パソコンのパスワードがわからず開けない時はどうすればいい?</description>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>相続税の申告を忘れたらどうなる?無申告加算税・延滞税の仕組みと対処法</title>
       <link>https://reliefnote.jp/blog/souzokuzei-mushinkoku-kasanzei.html</link>
@@ -201,20 +215,6 @@
       <guid isPermaLink="true">https://reliefnote.jp/blog/kaigo-kyugyo-kyufukin.html</guid>
       <description>介護休業給付金はいくらもらえる?申請方法と対象条件は?</description>
       <pubDate>Sun, 20 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>特殊清掃はどこに頼む?費用相場と業者選びで失敗しないポイント</title>
-      <link>https://reliefnote.jp/blog/tokushu-seisou-gyousha-erabikata.html</link>
-      <guid isPermaLink="true">https://reliefnote.jp/blog/tokushu-seisou-gyousha-erabikata.html</guid>
-      <description>特殊清掃はどこに頼めばいい?費用はどのくらいかかる?</description>
-      <pubDate>Sat, 19 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>相続税を払いすぎた?更正の請求で還付を受ける方法</title>
-      <link>https://reliefnote.jp/blog/souzokuzei-kangen-seikyuu.html</link>
-      <guid isPermaLink="true">https://reliefnote.jp/blog/souzokuzei-kangen-seikyuu.html</guid>
-      <description>相続税を払いすぎたときの還付請求はどうすればいい?</description>
-      <pubDate>Sat, 19 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
