@@ -23,6 +23,7 @@
 - [親の銀行口座は凍結される？凍結前にやるべきことと引き出し方](https://reliefnote.jp/blog/ginkou-kouza-touketsu.html): 親が亡くなると銀行口座はすぐ凍結される？
 
 ## 相続
+- [祭祀財産(お墓・仏壇)を継ぐ人は誰?祭祀承継者の決め方と手続き](https://reliefnote.jp/blog/saishi-zaisan-keishou.html): お墓や仏壇を継ぐ人は誰が決めるの?相続人と同じですか?
 - [相続した山林(森林)の届出は必要?手続きと期限・罰則まとめ](https://reliefnote.jp/blog/souzoku-sanrin-todokede.html): 山林を相続したら届け出は必要?
 - [配偶者居住権とは?しくみと申請・登記の注意点](https://reliefnote.jp/blog/haigusha-kyojuuken.html): 配偶者居住権とは何ですか
 - [相続土地国庫帰属制度とは?いらない土地を手放す手続き・費用・条件を解説](https://reliefnote.jp/blog/souzoku-tochi-kokko-kizoku-seido.html): 相続したけど使わない土地を国に引き取ってもらう制度はある?
@@ -68,6 +69,7 @@
 - [故人が借りていた賃貸住宅の解約・原状回復の進め方](https://reliefnote.jp/blog/chintai-kaiyaku.html): 亡くなった親の賃貸はどう解約する？
 
 ## デジタル遺品
+- [PayPay・楽天ペイなどスマホ決済の残高は相続できる?死後の返金・解約手続き](https://reliefnote.jp/blog/paypay-rakutenpay-zandaka-souzoku.html): 親が亡くなった場合、PayPayや楽天ペイの残高はどうなりますか?
 - [親のパソコンのパスワードがわからない時の解除方法](https://reliefnote.jp/blog/pc-password-kaijo.html): 親が亡くなった後、パソコンのパスワードがわからず開けない時はどうすればいい?
 - [Google・Appleアカウントの死後手続き｜家族が引き継ぐ・削除する方法](https://reliefnote.jp/blog/cloud-account-shigo-tetsuzuki.html): 亡くなった家族のGoogleアカウントやApple IDはどうやって解約・引き継ぎすればいい?
 - [故人のSNSアカウント削除・追悼アカウント化の手続き](https://reliefnote.jp/blog/sns-account-sakujo.html): 亡くなった家族のSNSアカウントはどう処理すればいい？
