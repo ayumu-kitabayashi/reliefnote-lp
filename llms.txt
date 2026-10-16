@@ -60,6 +60,7 @@
 - [相続手続きの期限一覧｜3か月・4か月・10か月の落とし穴](https://reliefnote.jp/blog/souzoku-kigen-ichiran.html): 相続手続きの期限はいつまで？
 
 ## 契約・解約
+- [親の火災保険、名義変更しないとどうなる?相続後の手続きガイド](https://reliefnote.jp/blog/kasai-hoken-meigi-henkou.html): 親が亡くなったら火災保険の名義変更はどうすればいい?
 - [親が亡くなった後の新聞購読解約の手続き方法｜連絡先・返金・未読分の扱い完全ガイド](https://reliefnote.jp/blog/shinbun-koudoku-kaiyaku.html): 親が死んだ 新聞 解約 どうすればいい
 - [契約者死亡後の自動車保険の名義変更と等級引継ぎ手続き](https://reliefnote.jp/blog/jidousha-hoken-meigi-henkou.html): 家族が亡くなったら自動車保険の名義はどう変更すればいい?
 - [亡くなった家族の生協(コープ)脱退と出資金返還の手続き方法](https://reliefnote.jp/blog/seikyo-dattai-shusshikin-henkan.html): 家族が亡くなった生協(コープ)の脱退と出資金の返還はどうすればいい?
@@ -100,6 +101,7 @@
 - [エンディングノートに何を書く？家族が本当に助かる項目リスト](https://reliefnote.jp/blog/ending-note-kakikata.html): エンディングノートには何を書けばいい？
 
 ## 介護・入院
+- [訪問診療の始め方は?在宅医療への切り替え手順と費用の目安](https://reliefnote.jp/blog/houmon-shinryo-hajimekata.html): 親の在宅医療・訪問診療はどうやって始めればいい?
 - [介護離職とは?後悔しないための判断基準と使える制度](https://reliefnote.jp/blog/kaigo-rishoku.html): 親の介護のために仕事を辞めるべきか迷っている。介護離職で後悔しないためにはどうすればいい?
 - [介護費用は医療費控除の対象になる?申告方法と対象サービス一覧](https://reliefnote.jp/blog/kaigo-hiyou-iryouhi-koujo.html): 介護費用は医療費控除の対象になりますか?
 - [介護保険負担限度額認定証とは?申請方法・対象条件・食費居住費軽減をわかりやすく解説](https://reliefnote.jp/blog/kaigo-futan-gendogaku-nintei.html): 親の介護施設の食費・居住費を安くする負担限度額認定証はどう申請すればいい?
